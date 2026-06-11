@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>대진고 설문 관리자</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap');
+  :root{
+    --primary:#264653; --primary-light:#2a6f77; --accent:#e9c46a; --accent-d:#d4a843;
+    --bg:#f4f3ee; --surface:#fff; --border:#dcd8cc; --text:#2b2b2b; --muted:#6b6b6b;
+    --ok:#2d7a4f; --danger:#c0392b;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+  header{background:var(--primary);color:#fff;padding:22px 24px}
+  header .inner{max-width:1040px;margin:0 auto}
+  h1{font-family:'Noto Serif KR',serif;font-size:1.45rem}
+  header p{font-size:.84rem;color:rgba(255,255,255,.78);margin-top:3px}
+  main{max-width:1040px;margin:0 auto;padding:24px}
+  .toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+  select,button{font-family:inherit;font-size:.92rem;border-radius:8px}
+  select{padding:10px 12px;border:1px solid var(--border);background:#fff}
+  button{padding:10px 16px;border:none;background:var(--primary);color:#fff;font-weight:700;cursor:pointer}
+  button:hover{background:var(--primary-light)}
+  button.secondary{background:var(--accent-d);color:var(--primary)}
+  button:disabled{background:#b3ab97;cursor:wait}
+  .status{font-size:.82rem;color:var(--muted)}
+  .notice{background:#fff;border:1px solid var(--border);border-radius:8px;padding:13px 16px;margin-bottom:16px;font-size:.9rem}
+  .notice.err{background:#fdeeee;color:var(--danger);border-color:#e0a9a4}
+  .stat-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+  .sbox{flex:1;min-width:120px;background:#fff;border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center}
+  .sbox .n{font-size:1.7rem;font-weight:700;color:var(--primary)}
+  .sbox .l{font-size:.78rem;color:var(--muted);margin-top:3px}
+  section{background:#fff;border:1px solid var(--border);border-radius:8px;padding:20px 22px}
+  h2{font-family:'Noto Serif KR',serif;font-size:1.15rem;color:var(--primary);margin-bottom:12px}
+  .cmt{background:#faf8f1;border-left:3px solid var(--accent);padding:10px 12px;margin:8px 0;font-size:.86rem;border-radius:0 6px 6px 0}
+  .cmt .who{color:var(--muted);font-size:.75rem;margin-bottom:4px}
+  .cmt b{color:var(--primary-light);font-size:.8rem}
+  .empty{color:var(--muted);font-size:.88rem}
+  @media(max-width:640px){
+    main{padding:16px}
+    .toolbar{align-items:stretch}
+    select,button{width:100%}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="inner">
+    <h1>생활규정 설문 관리자</h1>
+    <p>허용된 Google 계정으로만 응답 내용을 열람합니다.</p>
+  </div>
+</header>
+
+<main>
+  <div class="toolbar">
+    <select id="f-role" onchange="renderBoard()">
+      <option value="">전체</option>
+      <option>학생</option>
+      <option>학부모</option>
+      <option>교직원</option>
+    </select>
+    <button id="refresh" onclick="loadStats()">새로고침</button>
+    <button class="secondary" onclick="exportCSV()">CSV 내려받기</button>
+    <span class="status" id="status"></span>
+  </div>
+
+  <div class="notice" id="notice">데이터를 불러오는 중입니다.</div>
+  <div class="stat-row" id="stat-row"></div>
+
+  <section>
+    <h2>편별 의견</h2>
+    <div id="board-comments"></div>
+  </section>
+</main>
+
+<script>
+var STATS = [];
+var CF = [['c1','제1편 총칙'],['c2','제2편 학교생활'],['c3','제3편 생활지도'],['c4','제4편 징계'],['cEtc','기타']];
+
+function loadStats(){
+  var btn = document.getElementById('refresh');
+  btn.disabled = true;
+  document.getElementById('notice').className = 'notice';
+  document.getElementById('notice').textContent = '데이터를 불러오는 중입니다.';
+  if(!window.google || !google.script || !google.script.run){
+    showError('Apps Script 관리자 URL에서 열어 주세요.');
+    btn.disabled = false;
+    return;
+  }
+  google.script.run
+    .withSuccessHandler(function(data){
+      STATS = (data && data.rows) || [];
+      btn.disabled = false;
+      document.getElementById('notice').textContent = '불러오기 완료';
+      document.getElementById('status').textContent = '마지막 갱신: ' + new Date().toLocaleString('ko-KR');
+      renderBoard();
+    })
+    .withFailureHandler(function(err){
+      btn.disabled = false;
+      showError((err && err.message) || '데이터를 불러오지 못했습니다.');
+    })
+    .getAdminData();
+}
+
+function showError(message){
+  var box = document.getElementById('notice');
+  box.className = 'notice err';
+  box.textContent = message;
+}
+
+function getComments(row){
+  var source = row.comments || row;
+  return CF.map(function(field){
+    return { label: field[1], text: String(source[field[0]] || '').trim() };
+  });
+}
+
+function renderBoard(){
+  var role = document.getElementById('f-role').value;
+  var rows = STATS.filter(function(row){ return !role || row.role === role; });
+  var byRole = { '학생':0, '학부모':0, '교직원':0 };
+  var agreeN = 0;
+  STATS.forEach(function(row){
+    if(byRole[row.role] != null) byRole[row.role]++;
+    if(row.agree === 'Y') agreeN++;
+  });
+  var agreeRate = STATS.length ? Math.round(agreeN / STATS.length * 100) : 0;
+  document.getElementById('stat-row').innerHTML =
+    '<div class="sbox"><div class="n">' + STATS.length + '</div><div class="l">전체 응답</div></div>' +
+    '<div class="sbox"><div class="n">' + byRole['학생'] + '</div><div class="l">학생</div></div>' +
+    '<div class="sbox"><div class="n">' + byRole['학부모'] + '</div><div class="l">학부모</div></div>' +
+    '<div class="sbox"><div class="n">' + byRole['교직원'] + '</div><div class="l">교직원</div></div>' +
+    '<div class="sbox"><div class="n">' + agreeRate + '%</div><div class="l">개정 동의율</div></div>';
+
+  var html = '';
+  rows.forEach(function(row){
+    var comments = getComments(row).filter(function(comment){ return comment.text; });
+    if(!comments.length) return;
+    html += '<div class="cmt"><div class="who">' +
+      esc(row.ts || '') + ' · ' + esc(row.role || '') +
+      (row.detail ? ' · ' + esc(row.detail) : '') +
+      ' · 동의 ' + (row.agree === 'Y' ? 'O' : 'X') + '</div>' +
+      comments.map(function(comment){
+        return '<div><b>[' + esc(comment.label) + ']</b> ' + esc(comment.text) + '</div>';
+      }).join('') + '</div>';
+  });
+  document.getElementById('board-comments').innerHTML = html || '<p class="empty">의견이 없습니다.</p>';
+}
+
+function exportCSV(){
+  if(!STATS.length){
+    alert('데이터가 없습니다.');
+    return;
+  }
+  var head = ['시각','역할','세부','개정동의'].concat(CF.map(function(field){ return field[1]; }));
+  var lines = [head.join(',')];
+  STATS.forEach(function(row){
+    var comments = getComments(row);
+    var cells = [row.ts || '', row.role || '', row.detail || '', row.agree || ''].concat(comments.map(function(comment){
+      return comment.text.replace(/[\r\n]+/g, ' ');
+    }));
+    lines.push(cells.map(csvCell).join(','));
+  });
+  var blob = new Blob(['\uFEFF' + lines.join('\n')], { type:'text/csv;charset=utf-8' });
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = '대진고_설문결과_v2.csv';
+  a.click();
+}
+
+function csvCell(value){
+  return '"' + String(value).replace(/"/g, '""') + '"';
+}
+
+function esc(value){
+  return String(value).replace(/[&<>"']/g, function(ch){
+    return ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' })[ch];
+  });
+}
+
+loadStats();
+</script>
+</body>
+</html>

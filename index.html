@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>대진고등학교 학생생활규정 개정안 · 안내 및 의견수렴</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+  :root{
+    --primary:#264653; --primary-light:#2a6f77; --accent:#e9c46a; --accent-d:#d4a843;
+    --bg:#f4f3ee; --surface:#fff; --border:#dcd8cc; --text:#2b2b2b; --muted:#6b6b6b;
+    --new:#2a9d8f; --law:#e76f51; --mod:#457b9d; --ok:#2d7a4f; --danger:#c0392b;
+    --new-bg:#e3f4f1; --mod-bg:#e7eef5; --del-bg:#fdeeee;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+  /* HEADER */
+  .hd{background:var(--primary);color:#fff;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.2)}
+  .hd-in{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  .hd .name{font-family:'Noto Serif KR',serif;font-size:1.3rem;font-weight:700}
+  .hd .sub{font-size:.76rem;opacity:.75;margin-top:2px}
+  .hd .badge{background:var(--accent);color:var(--primary);padding:6px 14px;border-radius:6px;font-size:.76rem;font-weight:700}
+  .tabbar{background:var(--primary-light);box-shadow:0 2px 6px rgba(0,0,0,.15)}
+  .tabbar-in{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;padding:0 16px}
+  .tab-btn{background:none;border:none;color:rgba(255,255,255,.7);padding:13px 20px;cursor:pointer;font-size:.9rem;font-family:inherit;border-bottom:3px solid transparent;transition:.15s}
+  .tab-btn:hover{color:#fff}
+  .tab-btn.active{color:#fff;border-bottom-color:var(--accent);font-weight:700;background:rgba(0,0,0,.12)}
+  /* LAYOUT */
+  .container{max-width:920px;margin:0 auto;padding:24px}
+  .layout{max-width:1200px;margin:0 auto;padding:24px;display:grid;grid-template-columns:250px 1fr;gap:26px;align-items:start}
+  @media(max-width:900px){.layout{grid-template-columns:1fr;padding:16px}.container{padding:16px}}
+  .tabsec{display:none}.tabsec.active{display:block}
+  /* TOC */
+  .toc{position:sticky;top:120px;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px;max-height:calc(100vh - 150px);overflow:auto}
+  @media(max-width:900px){.toc{position:static;max-height:none;margin-bottom:16px}}
+  .toc h4{font-family:'Noto Serif KR',serif;font-size:.92rem;color:var(--primary);margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+  .toc ul{list-style:none}
+  .toc .tp{font-weight:700;font-size:.82rem;color:var(--primary);margin:10px 0 3px;font-family:'Noto Serif KR',serif}
+  .toc a{display:block;font-size:.79rem;color:var(--muted);padding:5px 8px;border-radius:6px;text-decoration:none;border-left:3px solid transparent}
+  .toc a:hover{background:#f0ece0;color:var(--primary);border-left-color:var(--accent)}
+  /* CARDS */
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px 26px;margin-bottom:20px}
+  .card h2{font-family:'Noto Serif KR',serif;font-size:1.4rem;color:var(--primary);margin-bottom:12px}
+  .card h3{font-family:'Noto Serif KR',serif;font-size:1.1rem;color:var(--primary);margin-bottom:10px}
+  .card p{color:#444;font-size:.92rem;margin-bottom:8px}
+  .overview{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+  @media(max-width:560px){.overview{grid-template-columns:1fr}}
+  .ov{background:#faf8f1;border:1px solid var(--border);border-radius:8px;padding:12px 14px}
+  .ov .t{font-size:.76rem;color:var(--muted)}
+  .ov .v{font-size:.92rem;font-weight:600;color:var(--primary);margin-top:3px}
+  .lawbox{background:#fdf1ec;border-left:4px solid var(--law);border-radius:0 8px 8px 0;padding:12px 16px;font-size:.83rem;color:#7a3b2a;margin-top:12px;line-height:1.9}
+  .lawbox a{color:#b5462f;font-weight:600;text-decoration:underline}
+  .lawbox a:hover{color:var(--law)}
+  .nexthint{text-align:center;font-size:.86rem;color:var(--muted);margin-top:4px}
+  .nexthint b{color:var(--primary-light)}
+  /* ROLE */
+  .roles{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+  .role{flex:1;min-width:120px;padding:14px;border:2px solid var(--border);border-radius:10px;background:#fff;cursor:pointer;font-family:inherit;font-size:.92rem;font-weight:500;color:var(--muted);text-align:center;transition:.15s}
+  .role .e{font-size:1.4rem;display:block;margin-bottom:5px}
+  .role:hover{border-color:var(--primary-light);color:var(--primary-light)}
+  .role.sel{background:var(--primary);border-color:var(--primary);color:#fff}
+  .detail{margin-top:14px;display:none}
+  .detail.show{display:block}
+  .detail label{font-size:.85rem;font-weight:500;display:block;margin-bottom:6px}
+  select{padding:9px 12px;border:1px solid var(--border);border-radius:8px;font-family:inherit;font-size:.9rem;background:#fff;margin-right:8px}
+  .role-status{margin-top:14px;font-size:.85rem;color:var(--ok);font-weight:600;display:none}
+  .role-status.show{display:block}
+  /* CHANGE CARDS (주요 개정 내용) */
+  .q-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;margin-bottom:20px;overflow:hidden}
+  .q-head{padding:16px 20px;display:flex;gap:12px;border-bottom:1px solid var(--border)}
+  .q-num{background:var(--primary);color:#fff;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem;flex-shrink:0}
+  .q-title{font-family:'Noto Serif KR',serif;font-size:1.08rem;color:var(--primary);font-weight:700}
+  .q-badges{margin-top:6px;display:flex;gap:6px;flex-wrap:wrap}
+  .badge2{font-size:.7rem;font-weight:700;padding:3px 9px;border-radius:12px}
+  .b-new{background:var(--new-bg);color:#1f7a6f;border:1px solid #a3d9d0}
+  .b-mod{background:var(--mod-bg);color:var(--mod);border:1px solid #aac5dd}
+  .b-del{background:var(--del-bg);color:#b0352b;border:1px solid #e0a9a4}
+  .b-law{background:#fdeae3;color:var(--law);border:1px solid #f0b9a8}
+  .b-star{background:var(--accent);color:var(--primary);border:1px solid var(--accent-d)}
+  .compare{display:grid;grid-template-columns:1fr 1fr}
+  @media(max-width:680px){.compare{grid-template-columns:1fr}}
+  .col{padding:16px 20px}
+  .col.cur{background:#fbfaf6;border-right:1px solid var(--border)}
+  @media(max-width:680px){.col.cur{border-right:none;border-bottom:1px solid var(--border)}}
+  .col .lab{font-size:.72rem;font-weight:700;letter-spacing:.04em;margin-bottom:8px;display:inline-block;padding:2px 8px;border-radius:4px}
+  .col.cur .lab{background:#eee;color:#777}
+  .col.new .lab{background:var(--new-bg);color:#1f7a6f}
+  .col .body{font-size:.87rem;color:#3a3a3a}
+  .col .body ul{margin:6px 0 0 18px}.col .body li{margin:3px 0}
+  .col .body .none{color:#aaa;font-style:italic}
+  .raw-toggle{padding:9px 20px;background:#faf8f1;border-top:1px dashed var(--border)}
+  .raw-toggle button{background:none;border:none;color:var(--primary-light);font-family:inherit;font-size:.82rem;cursor:pointer;text-decoration:underline}
+  .raw{display:none;padding:13px 20px;background:#faf8f1;font-size:.8rem;color:#555;border-top:1px dashed var(--border);white-space:pre-wrap}
+  .raw.open{display:block}
+  .answer{padding:16px 20px;border-top:1px solid var(--border);display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .answer .ask{font-size:.87rem;font-weight:500;margin-right:auto}
+  .opt{padding:10px 24px;border:2px solid var(--border);border-radius:8px;background:#fff;cursor:pointer;font-family:inherit;font-size:.9rem;font-weight:600;transition:.15s}
+  .opt:hover{border-color:var(--primary-light)}
+  .opt.agree.sel{background:var(--ok);border-color:var(--ok);color:#fff}
+  .opt.disagree.sel{background:var(--danger);border-color:var(--danger);color:#fff}
+  .progress-wrap{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:12px 16px;margin-bottom:18px;position:sticky;top:120px;z-index:40}
+  .progress-bar{height:9px;background:#e4ddca;border-radius:6px;overflow:hidden}
+  .progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent-d));transition:width .3s}
+  .progress-text{font-size:.78rem;color:var(--muted);margin-top:5px;text-align:right}
+  /* REGULATION */
+  .reg-jang{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px 26px;margin-bottom:18px;scroll-margin-top:130px}
+  .jang-head{font-family:'Noto Serif KR',serif;color:var(--primary);border-bottom:2px solid var(--accent);padding-bottom:8px;margin-bottom:14px}
+  .jang-head .p{font-size:.76rem;color:var(--muted);display:block;font-weight:400;font-family:'Noto Sans KR'}
+  .jang-head .j{font-size:1.12rem;font-weight:700}
+  .r-jeol{font-family:'Noto Serif KR',serif;font-size:.96rem;color:var(--primary-light);font-weight:600;margin:16px 0 6px}
+  .r-art{font-size:.88rem;margin:11px 0 2px}.r-art b{color:var(--primary)}
+  .r-item{font-size:.86rem;margin:3px 0 3px 14px;color:#3a3a3a}
+  .r-ho{font-size:.85rem;margin:2px 0 2px 30px;color:#444}
+  .r-p{font-size:.86rem;margin:4px 0;color:#3a3a3a}
+  .r-buchik{font-weight:700;color:var(--muted);margin:16px 0 4px;font-size:.9rem;border-top:1px dashed var(--border);padding-top:10px}
+  .abadge{display:inline-block;font-size:.68rem;font-weight:700;padding:2px 7px;border-radius:10px;margin-left:6px;vertical-align:middle}
+  .ab-law{background:#fdeae3;color:var(--law);border:1px solid #f0b9a8}
+  .ab-new{background:#e3f4f1;color:#1f7a6f;border:1px solid #a3d9d0}
+  .ab-mod{background:#e7eef5;color:var(--mod);border:1px solid #aac5dd}
+  .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:.78rem;color:var(--muted);margin-top:8px}
+  /* OPINION */
+  .clabel{font-size:.88rem;font-weight:600;margin:16px 0 6px;color:var(--primary)}
+  .csub{font-weight:400;color:var(--muted);font-size:.82rem}
+  textarea{width:100%;min-height:90px;border:1px solid var(--border);border-radius:8px;padding:11px 13px;font-family:inherit;font-size:.9rem;resize:vertical}
+  textarea:focus,select:focus{outline:none;border-color:var(--primary-light)}
+  .agreebox{display:flex;align-items:flex-start;gap:10px;background:#f0ece0;border-radius:8px;padding:14px 16px;cursor:pointer;font-size:.9rem;margin-top:18px}
+  .agreebox input{width:20px;height:20px;margin-top:1px;flex-shrink:0;accent-color:var(--primary)}
+  .submit{width:100%;padding:16px;background:var(--primary);color:#fff;border:none;border-radius:10px;font-family:inherit;font-size:1.05rem;font-weight:700;cursor:pointer;margin-top:14px}
+  .submit:hover{background:var(--primary-light)}.submit:disabled{background:#b3ab97}
+  .msg{padding:13px 16px;border-radius:8px;margin:14px 0;font-size:.9rem;display:none}
+  .msg.show{display:block}
+  .msg.err{background:#fdeeee;color:var(--danger);border:1px solid #e0a9a4}
+  .done{display:none;text-align:center;padding:60px 20px}.done.show{display:block}
+  .done .c{font-size:3.2rem;color:var(--ok)}
+  .done h2{font-family:'Noto Serif KR',serif;color:var(--primary);margin:12px 0 6px}
+  footer{text-align:center;color:var(--muted);font-size:.78rem;padding:26px 16px}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <div class="hd-in">
+    <div>
+      <div class="name">대진고등학교</div>
+      <div class="sub">학생생활규정 개정안 · 안내 및 의견수렴</div>
+    </div>
+    <span class="badge">2026 개정안</span>
+  </div>
+  <nav class="tabbar"><div class="tabbar-in">
+    <button class="tab-btn active" data-tab="home">🏠 안내</button>
+    <button class="tab-btn" data-tab="changes">📌 주요 개정 내용</button>
+    <button class="tab-btn" data-tab="full">📖 2026 개정안 전문</button>
+    <button class="tab-btn" data-tab="files">📎 원문 자료(PDF)</button>
+    <button class="tab-btn" data-tab="opinion">✍️ 의견 제시</button>
+  </div></nav>
+</header>
+
+<div id="app">
+  <!-- ===== 홈/안내 ===== -->
+  <section class="tabsec active" id="tab-home">
+    <div class="container">
+      <div class="card">
+        <h2>학생생활규정 개정안 안내</h2>
+        <p>대진고등학교는 2026년 개정 「초·중등교육법」과 「교원의 학생생활지도에 관한 고시」(교육부고시 제2026-3호)를 반영하고, 그동안 <b>11개로 분산되어 있던 규정을 하나의 연속 체계(제1편~제4편, 제1~116조)로 통합</b>하기 위해 학생생활규정을 개정합니다.</p>
+        <div class="overview">
+          <div class="ov"><div class="t">규정 체계</div><div class="v">11개 독립 규정 → 4편 116조 통합</div></div>
+          <div class="ov"><div class="t">용어 현행화</div><div class="v">선도→생활지도, 선도위원회→학생생활교육위원회</div></div>
+          <div class="ov"><div class="t">주요 신설</div><div class="v">생활지도 방법·제지·개별학생교육지원·스마트기기</div></div>
+          <div class="ov"><div class="t">시행 예정</div><div class="v">2026학년도</div></div>
+        </div>
+        <div class="lawbox">📖 개정 근거:
+          <a href="https://www.law.go.kr/법령/초중등교육법" target="_blank" rel="noopener">「초·중등교육법」</a> 제18조의5·제20조의2·제20조의4·제20조의5·제20조의7,
+          <a href="https://www.law.go.kr/법령/초중등교육법시행령" target="_blank" rel="noopener">같은 법 시행령</a> 제40조의3·제40조의4,
+          <a href="https://www.law.go.kr/행정규칙/교원의학생생활지도에관한고시" target="_blank" rel="noopener">「교원의 학생생활지도에 관한 고시」</a>(교육부고시 제2026-3호),
+          <a href="https://www.google.com/search?q=대구교육권리헌장" target="_blank" rel="noopener">「대구교육권리헌장」</a></div>
+      </div>
+
+      <div class="card">
+        <h3>어떤 자격으로 열람하시나요?</h3>
+        <p style="font-size:.82rem;color:var(--muted)">통계 분류용으로만 사용하며 이름 등 개인정보는 수집하지 않습니다.</p>
+        <div class="roles" id="roles">
+          <div class="role" data-role="학생"><span class="e">🎓</span>학생</div>
+          <div class="role" data-role="학부모"><span class="e">👨‍👩‍👧</span>학부모</div>
+          <div class="role" data-role="교직원"><span class="e">👩‍🏫</span>교직원</div>
+        </div>
+        <div class="detail" id="detail-학생">
+          <label>학년 · 반</label>
+          <select id="d-grade"><option value="">학년</option><option>1학년</option><option>2학년</option><option>3학년</option></select>
+          <select id="d-class"><option value="">반</option></select>
+        </div>
+        <div class="detail" id="detail-학부모">
+          <label>자녀 학년</label>
+          <select id="d-childgrade"><option value="">선택</option><option>1학년</option><option>2학년</option><option>3학년</option></select>
+        </div>
+        <div class="detail" id="detail-교직원">
+          <label>직책</label>
+          <select id="d-position"><option value="">선택</option><option>교장·교감</option><option>부장교사</option><option>담임교사</option><option>비담임교사</option><option>행정직원</option></select>
+        </div>
+        <div class="role-status" id="role-status"></div>
+      </div>
+
+      <div class="card">
+        <label class="agreebox" style="margin-top:0">
+          <input type="checkbox" id="agree">
+          <span>위 개정안을 충분히 검토하였으며, <b>개정 취지에 동의</b>합니다.</span>
+        </label>
+        <div class="msg err" id="msg"></div>
+        <button class="submit" id="submit">제출하기</button>
+      </div>
+      <p class="nexthint"><b>주요 개정 내용 · 개정안 전문</b>을 살펴보시고, 남기실 의견이 있으면 <b>의견 제시</b> 탭에 작성해 주세요. 준비되면 위 [제출하기]를 눌러 주세요.</p>
+    </div>
+  </section>
+
+  <!-- ===== 주요 개정 내용 ===== -->
+  <section class="tabsec" id="tab-changes">
+    <div class="container">
+      <div class="card">
+        <h2>주요 개정 내용</h2>
+        <p>현행 규정과 개정안의 핵심 변경 사항입니다. 내용을 살펴보신 뒤 <b>「의견 제시」 탭</b>에서 편별 의견과 동의 여부를 남겨 주세요.</p>
+      </div>
+      <div id="questions"></div>
+    </div>
+  </section>
+
+  <!-- ===== 개정안 전문 ===== -->
+  <section class="tabsec" id="tab-full">
+    <div class="layout">
+      <aside class="toc">
+        <h4>2026 개정안 전문 목차</h4>
+        <ul id="toc"></ul>
+      </aside>
+      <main>
+        <div class="card">
+          <h2>2026 개정안 전문</h2>
+          <p style="font-size:.84rem;color:var(--muted)">개정안 전체 조문(제1~116조)입니다. 변경된 조문에는 표시가 있습니다.</p>
+          <div class="legend">
+            <span><span class="abadge ab-law">법령 반영</span> 상위법 개정 반영</span>
+            <span><span class="abadge ab-new">자체 신설</span> 본교가 새로 추가</span>
+            <span><span class="abadge ab-mod">일부 수정</span> 기존 조문 수정</span>
+          </div>
+        </div>
+        <div id="reg-body"></div>
+      </main>
+    </div>
+  </section>
+
+  <!-- ===== 원문 자료(PDF) ===== -->
+  <section class="tabsec" id="tab-files">
+    <div class="container">
+      <div class="card">
+        <h2>원문 자료 (PDF)</h2>
+        <p>개정안 원문, 신구대조표, 그리고 현행(2022) 규정을 PDF로 제공합니다. 아래에서 바로 보거나 내려받을 수 있습니다.</p>
+      </div>
+
+      <div class="card">
+        <h3>📄 학생생활규정 개정안(초안)</h3>
+        <p style="font-size:.85rem;color:var(--muted)">제1편~제4편 / 제1~116조 전체 조문 (2026.04.24. 기준 초안)</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 14px">
+          <a class="submit" style="width:auto;padding:11px 18px;margin-top:0;text-decoration:none;display:inline-block" href="rule-full.pdf" target="_blank" rel="noopener">새 탭으로 보기</a>
+          <a class="submit" style="width:auto;padding:11px 18px;margin-top:0;background:var(--accent-d);text-decoration:none;display:inline-block" href="rule-full.pdf" download="대진고등학교_학생생활규정_개정안.pdf">내려받기</a>
+        </div>
+        <iframe src="rule-full.pdf#view=FitH" style="width:100%;height:680px;border:1px solid var(--border);border-radius:8px" title="학생생활규정 개정안 PDF"></iframe>
+      </div>
+
+      <div class="card">
+        <h3>📊 학생생활규정 신구대조표</h3>
+        <p style="font-size:.85rem;color:var(--muted)">현행 규정과 개정안을 조문별로 비교한 표</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 14px">
+          <a class="submit" style="width:auto;padding:11px 18px;margin-top:0;text-decoration:none;display:inline-block" href="rule-compare.pdf" target="_blank" rel="noopener">새 탭으로 보기</a>
+          <a class="submit" style="width:auto;padding:11px 18px;margin-top:0;background:var(--accent-d);text-decoration:none;display:inline-block" href="rule-compare.pdf" download="대진고등학교_학생생활규정_신구대조표.pdf">내려받기</a>
+        </div>
+        <iframe src="rule-compare.pdf#view=FitH" style="width:100%;height:680px;border:1px solid var(--border);border-radius:8px" title="학생생활규정 신구대조표 PDF"></iframe>
+      </div>
+
+      <div class="card">
+        <h3>📚 현행 학생생활규정 (2022.06.29. 개정)</h3>
+        <p style="font-size:.85rem;color:var(--muted)">개정 전 현행 규정 전문 — 개정안과 비교해 보실 수 있습니다.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 14px">
+          <a class="submit" style="width:auto;padding:11px 18px;margin-top:0;text-decoration:none;display:inline-block" href="rule-2022.pdf" target="_blank" rel="noopener">새 탭으로 보기</a>
+          <a class="submit" style="width:auto;padding:11px 18px;margin-top:0;background:var(--accent-d);text-decoration:none;display:inline-block" href="rule-2022.pdf" download="대진고등학교_학생생활규정_2022.06.29.개정.pdf">내려받기</a>
+        </div>
+        <iframe src="rule-2022.pdf#view=FitH" style="width:100%;height:680px;border:1px solid var(--border);border-radius:8px" title="현행 학생생활규정(2022) PDF"></iframe>
+      </div>
+
+      <p style="font-size:.8rem;color:var(--muted);text-align:center">※ 휴대전화에서 미리보기가 보이지 않으면 [새 탭으로 보기] 또는 [내려받기]를 이용해 주세요.</p>
+    </div>
+  </section>
+
+  <!-- ===== 의견 제시 ===== -->
+  <section class="tabsec" id="tab-opinion">
+    <div class="container">
+      <div id="opinion-body">
+        <div class="card">
+          <h2>의견 제시</h2>
+          <p style="font-size:.85rem;color:var(--muted)">개인적인 희망보다는 <b>규정에서 미비한 부분이나 수정이 필요한 사항</b>을 중심으로 편(編)별로 적어 주세요. (모두 선택)</p>
+          <div class="clabel">제1편 총칙 <span class="csub">목적·적용·용어·기본원칙</span></div>
+          <textarea id="c1"></textarea>
+          <div class="clabel">제2편 학생의 학교생활 <span class="csub">학생생활·복장/용의·스마트기기·학생자치</span></div>
+          <textarea id="c2"></textarea>
+          <div class="clabel">제3편 생활지도와 교육지원 <span class="csub">생활지도·개별학생교육지원·상벌점</span></div>
+          <textarea id="c3"></textarea>
+          <div class="clabel">제4편 징계 <span class="csub">학생생활교육위원회·징계</span></div>
+          <textarea id="c4"></textarea>
+          <div class="clabel">기타 의견</div>
+          <textarea id="cEtc"></textarea>
+          <p style="font-size:.83rem;color:var(--muted);margin-top:14px">작성을 마치셨으면 <b>「안내」 탭</b>의 [제출하기] 버튼을 눌러 주세요.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="done" id="done">
+  <div class="c">✓</div>
+  <h2>제출되었습니다</h2>
+  <p style="color:var(--muted)">소중한 의견 감사합니다. 신분·동의·의견이 학교에 전달되어 개정안 확정에 반영됩니다.</p>
+</div>
+
+<footer>© 2026 대진고등학교 · 본 페이지는 통계 분류 외 개인정보를 수집하지 않습니다.</footer>
+
+<script src="regulation.js?v=4"></script>
+<script>
+/* ===== 설정 ===== */
+const GAS_URL = 'https://script.google.com/macros/s/AKfycbwuYkHgjBXXMRwMokvXMJASf4-ynD-QPWV8lGgad6bnWUDQMdq2Bs89fPKtV899SUnVMA/exec';
+const SUBMITTED_KEY = 'daejin_v2_submitted';
+
+/* ===== 조문 배지 ===== */
+const ART_BADGE = { 1:'new',2:'new',3:'new',4:'new',5:'new',6:'new', 30:'mod',31:'law', 103:'mod',107:'new' };
+for(let i=74;i<=95;i++) ART_BADGE[i]='law';
+const BADGE_LABEL={law:['ab-law','법령 반영'],new:['ab-new','자체 신설'],mod:['ab-mod','일부 수정']};
+
+/* ===== 주요 개정 내용 7항목 ===== */
+const QUESTIONS = [
+  { id:'q1', title:'용어 현행화', badges:[['b-mod','일부수정']],
+    cur:['현행 규정의 용어를 그대로 사용', ['"선도" / "학생선도위원회"','"통신기기" 관리(제15조)']],
+    new:['시대·법령에 맞게 용어 정비', ['"선도" → "<b>생활지도</b>"','"학생선도위원회" → "<b>학생생활교육위원회</b>"','"통신기기" → "<b>스마트기기</b>"']],
+    raw:'[현행] 제15조(통신기기관리), 학생선도규정 제2장 학생선도위원회\n[개정] 제30조(스마트기기 관리), 제103조 학생생활교육위원회 — 명칭 변경' },
+  { id:'q2', title:'생활지도 방법 명문화', badges:[['b-new','신설']],
+    cur:['생활지도 방법에 관한 구체적 규정 없음', null],
+    new:['교원이 사용할 수 있는 생활지도 방법을 단계별로 정의(제79~84조)', ['<b>조언·상담·주의·훈육·훈계·보상</b> 6가지','처벌이 아닌 예방·관계회복·행동개선 우선','체벌·모욕·공개망신 방식 금지']],
+    raw:'[개정] 제79조(조언) 제80조(상담) 제81조(주의) 제82조(훈육) 제83조(훈계) 제84조(보상)\n근거: 「초·중등교육법」 제20조의2, 시행령 제40조의3, 교육부고시 제2026-3호' },
+  { id:'q3', title:'방어 및 보호를 위한 제지 신설', badges:[['b-new','신설'],['b-law','법령반영']],
+    cur:['긴급 상황에서의 물리적 제지에 관한 명시 규정 없음', null],
+    new:['긴급 시 학생·타인의 안전을 위한 "제지" 근거 마련(제85조)', ['자신 또는 타인의 생명·신체에 위해가 있는 긴급 시에 한함','필요 최소한도, 신체에 고통을 주는 방식 금지','실시 후 학교장 보고 및 보호자 통지']],
+    raw:'[개정] 제85조(방어 및 보호를 위한 제지)\n근거: 「초·중등교육법」 제20조의2, 시행령 제40조의3' },
+  { id:'q4', title:'물품의 조사 및 분리보관', badges:[['b-del','삭제'],['b-new','신설'],['b-law','법령반영']],
+    cur:['소지품 검사 규정(제25조) — 동의하지 않으면 교장·교감 입회하 검사 등', ['소지품 및 소지품 검사','거부 시 확인서 후 위원회 심의']],
+    new:['소지품 검사 규정 삭제 → 제86조 "물품의 조사 및 분리보관"으로 통합·정비', ['합리적 이유가 있을 때 필요 범위에서 조사','수업방해·위해·금지 물품을 분리보관','사유·기간·장소·반환방법 사전 안내 및 보호자 통지']],
+    raw:'[현행 삭제] 제25조(소지품 및 소지품 검사)\n[개정 신설] 제86조(물품의 조사 및 분리보관) — 근거: 「초·중등교육법」 제20조의7' },
+  { id:'q5', title:'스마트기기(휴대전화) 사용 제한', badges:[['b-new','신설'],['b-law','법령반영'],['b-star','핵심']],
+    cur:['통신기기 관리 수준의 일반 규정만 존재(제15조)', ['수업 중 컴퓨터는 교육활동용으로만 사용 등']],
+    new:['교내 스마트기기 사용 제한을 명문화(제31조)', ['<b>수업 중 휴대전화 등 스마트기기 사용 금지</b>','등교 후 담임교사가 수거하여 보관, 일과 후 반환','예외: 장애·특수교육 보조, 교육목적, 긴급상황','무단 촬영·유포 등 중대 사안은 관계 법령에 따라 처리']],
+    raw:'[개정] 제31조(스마트기기 사용)\n근거: 「초·중등교육법」 제20조의5(교내 스마트기기의 사용 제한 등)' },
+  { id:'q6', title:'개별학생교육지원(분리지도) 신설', badges:[['b-new','신설'],['b-law','법령반영']],
+    cur:['수업 방해 학생에 대한 분리·지원 절차 규정 없음', null],
+    new:['수업 방해로 학습권 보호가 필요할 때의 분리지도 근거 마련(제89~92조)', ['배제·처벌이 아닌 행동개선·학습회복 목적','요건: 2회 이상 주의에도 반복, 또는 심각한 소란','교실 내/외 지정 공간에서 상담·학습지원','가정학습 연계 시 출석으로 인정']],
+    raw:'[개정] 제89조~제92조 (정의·요건·절차·방법)\n근거: 「초·중등교육법」 제20조의4, 시행령 제40조의4' },
+  { id:'q7', title:'학생생활교육위원회 및 징계 정비', badges:[['b-mod','일부수정'],['b-new','재심 신설']],
+    cur:['학생선도규정에 따른 학생선도위원회 운영', ['제3조(구성 및 의결) 학생선도위원회']],
+    new:['징계 심의기구를 학생생활교육위원회로 정비(제103조) + 재심 절차 신설(제107조)', ['"학생선도위원회" → "<b>학생생활교육위원회</b>"','재심 절차·방법은 「초·중등교육법」 등 관계 법령에 따름']],
+    raw:'[개정] 제103조(구성 및 의결), 제107조(재심)\n제4편 징계 > 제9장 학생생활교육위원회 및 징계' }
+];
+
+/* ===== 상태 ===== */
+const state={role:null, detail:''};
+
+/* ===== 탭 ===== */
+document.querySelectorAll('.tab-btn').forEach(b=>b.onclick=()=>showTab(b.dataset.tab));
+function showTab(name){
+  document.querySelectorAll('.tab-btn').forEach(x=>x.classList.toggle('active', x.dataset.tab===name));
+  document.querySelectorAll('.tabsec').forEach(s=>s.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  window.scrollTo({top:0});
+}
+
+/* ===== 주요 개정 내용 렌더 ===== */
+function renderQuestions(){
+  const box=document.getElementById('questions'); box.innerHTML='';
+  QUESTIONS.forEach((q,i)=>{
+    const badges=q.badges.map(b=>`<span class="badge2 ${b[0]}">${b[1]}</span>`).join('');
+    const curBody=q.cur[1]?`<ul>${q.cur[1].map(x=>`<li>${x}</li>`).join('')}</ul>`:`<div class="none">관련 규정 없음 / 신설</div>`;
+    const newBody=q.new[1]?`<ul>${q.new[1].map(x=>`<li>${x}</li>`).join('')}</ul>`:'';
+    const c=document.createElement('div'); c.className='q-card'; c.id=q.id;
+    c.innerHTML=`
+      <div class="q-head"><div class="q-num">${i+1}</div><div><div class="q-title">${q.title}</div><div class="q-badges">${badges}</div></div></div>
+      <div class="compare">
+        <div class="col cur"><span class="lab">현행 (2022)</span><div class="body">${q.cur[0]}${curBody}</div></div>
+        <div class="col new"><span class="lab">개정안 (2026)</span><div class="body">${q.new[0]}${newBody}</div></div>
+      </div>
+      <div class="raw-toggle"><button onclick="toggleRaw('${q.id}')">📄 신구대조표 원문 보기</button></div>
+      <div class="raw" id="raw-${q.id}">${q.raw}</div>`;
+    box.appendChild(c);
+  });
+}
+function toggleRaw(id){document.getElementById('raw-'+id).classList.toggle('open');}
+
+/* ===== 규정 전문 렌더 ===== */
+function renderReg(){
+  const data=window.REGULATION, body=document.getElementById('reg-body'), toc=document.getElementById('toc');
+  if(!data||!data.sections){ body.innerHTML='<div class="card">규정 전문(regulation.js)을 불러오지 못했습니다.</div>'; return; }
+  let tHtml='', bHtml='', lastP=null;
+  data.sections.forEach(s=>{
+    if(s.pyeon!==lastP){ tHtml+=`<li class="tp">제${s.pyeon}편 ${s.pyeonTitle}</li>`; lastP=s.pyeon; }
+    tHtml+=`<li><a href="#${s.anchor}">제${s.jang}장 ${s.jangTitle}</a></li>`;
+    let inner='';
+    s.blocks.forEach(b=>{
+      b.text=b.text.replace(/`/g,"'"); const t=esc(b.text);
+      if(b.t==='jeol') inner+=`<div class="r-jeol">${t}</div>`;
+      else if(b.t==='buchik') inner+=`<div class="r-buchik">${t}</div>`;
+      else if(b.t==='art'){
+        const m=b.text.match(/^제(\d+)조(?:\(.*?\))?/); let badge='';
+        if(m){const bk=ART_BADGE[parseInt(m[1])]; if(bk){const[cls,lab]=BADGE_LABEL[bk]; badge=`<span class="abadge ${cls}">${lab}</span>`;}}
+        const mm=b.text.match(/^(제\d+조(?:\(.*?\))?)([\s\S]*)$/);
+        inner+= mm?`<p class="r-art"><b>${esc(mm[1])}</b>${badge}${esc(mm[2])}</p>`:`<p class="r-art">${t}${badge}</p>`;
+      }
+      else if(b.t==='item') inner+=`<p class="r-item">${t}</p>`;
+      else if(b.t==='ho') inner+=`<p class="r-ho">${t}</p>`;
+      else inner+=`<p class="r-p">${t}</p>`;
+    });
+    bHtml+=`<div class="reg-jang" id="${s.anchor}"><div class="jang-head"><span class="p">제${s.pyeon}편 ${s.pyeonTitle}</span><span class="j">제${s.jang}장 ${s.jangTitle}</span></div>${inner}</div>`;
+  });
+  toc.innerHTML=tHtml; body.innerHTML=bHtml;
+}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+
+/* ===== 신분 ===== */
+document.getElementById('roles').addEventListener('click',e=>{
+  const r=e.target.closest('.role'); if(!r)return;
+  document.querySelectorAll('.role').forEach(x=>x.classList.remove('sel'));
+  r.classList.add('sel'); state.role=r.dataset.role;
+  document.querySelectorAll('.detail').forEach(d=>d.classList.remove('show'));
+  document.getElementById('detail-'+state.role).classList.add('show');
+  updateRoleStatus();
+});
+(function(){const c=document.getElementById('d-class');for(let i=1;i<=12;i++){const o=document.createElement('option');o.textContent=i+'반';c.appendChild(o);}})();
+['d-grade','d-class','d-childgrade','d-position'].forEach(id=>document.getElementById(id).addEventListener('change',updateRoleStatus));
+function getDetail(){
+  if(state.role==='학생')return [document.getElementById('d-grade').value,document.getElementById('d-class').value].filter(Boolean).join(' ');
+  if(state.role==='학부모')return document.getElementById('d-childgrade').value||'';
+  if(state.role==='교직원')return document.getElementById('d-position').value||'';
+  return '';
+}
+function updateRoleStatus(){
+  const s=document.getElementById('role-status');
+  if(state.role){ state.detail=getDetail(); s.textContent='✓ '+state.role+(state.detail?' ('+state.detail+')':'')+' (으)로 참여 중'; s.classList.add('show'); }
+  else s.classList.remove('show');
+}
+
+/* ===== 제출 ===== */
+document.getElementById('submit').onclick=function(){
+  if(hasSubmitted()){showMsg('이 브라우저에서는 이미 제출되었습니다.');lockSubmit();return;}
+  if(!state.role){showMsg('먼저 「안내」 탭에서 자격(학생/학부모/교직원)을 선택해 주세요.');return;}
+  state.detail=getDetail();
+  const comments={c1:v('c1'),c2:v('c2'),c3:v('c3'),c4:v('c4'),cEtc:v('cEtc')};
+  const agree=document.getElementById('agree').checked?'Y':'N';
+  if(!Object.values(comments).some(x=>x) && agree==='N'){
+    showMsg('개정 동의 체크 또는 편별 의견 중 하나 이상을 입력해 주세요.');return;
+  }
+  const payload={role:state.role,detail:state.detail,comments,agree,ts:new Date().toISOString()};
+  const btn=document.getElementById('submit'); btn.disabled=true; btn.textContent='제출 중...';
+  if(!GAS_URL){const a=JSON.parse(localStorage.getItem('daejin_v2')||'[]');a.push(payload);localStorage.setItem('daejin_v2',JSON.stringify(a));markSubmitted();finish();return;}
+  fetch(GAS_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)}).then(()=>{markSubmitted();finish();}).catch(()=>{btn.disabled=false;btn.textContent='제출하기';showMsg('제출 오류. 다시 시도해 주세요.');});
+};
+function v(id){return document.getElementById(id).value.trim();}
+function showMsg(t){const m=document.getElementById('msg');m.textContent=t;m.className='msg err show';m.scrollIntoView({behavior:'smooth',block:'center'});}
+function finish(){document.getElementById('app').style.display='none';var tb=document.querySelector('.tabbar');if(tb)tb.style.display='none';document.getElementById('done').classList.add('show');window.scrollTo({top:0,behavior:'smooth'});}
+function hasSubmitted(){return localStorage.getItem(SUBMITTED_KEY)==='Y';}
+function markSubmitted(){localStorage.setItem(SUBMITTED_KEY,'Y');}
+function lockSubmit(){
+  const btn=document.getElementById('submit');
+  btn.disabled=true;
+  btn.textContent='이미 제출됨';
+}
+
+/* init */
+renderQuestions();
+renderReg();
+if(hasSubmitted())lockSubmit();
+</script>
+</body>
+</html>
