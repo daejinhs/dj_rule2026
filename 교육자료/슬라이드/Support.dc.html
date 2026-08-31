@@ -10,9 +10,9 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;600;800&family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&display=swap">
   <style>
 :root{
-  --paper:#FAF7F2; --paper2:#F1ECE2; --ink:#1C1A17; --ink2:#443E36;
-  --muted:#7B7367; --rule:#DBD4C7; --hair:#E8E2D7;
-  --red:#A0402C; --blue:#2C5183; --redwash:#F5E8E3; --bluewash:#E6EDF5;
+  --paper:#FFFFFF; --paper2:#F0EFEC; --ink:#171614; --ink2:#33302B;
+  --muted:#59544C; --rule:#C6C1B8; --hair:#DEDAD2;
+  --red:#9C3B26; --blue:#28497A; --redwash:#F8EBE6; --bluewash:#E9EFF7;
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink);
@@ -65,7 +65,7 @@ a:hover{color:#7E3120}
 /* 블록 */
 .block{padding:18px 22px;background:var(--paper2)}
 .block.blue{background:var(--blue);color:var(--paper)}
-.block.blue .lab,.block.blue .t16{color:rgba(250,247,242,.72)}
+.block.blue .lab,.block.blue .t16{color:rgba(255,255,255,.86)}
 .block.red{background:var(--redwash)}
 .block.wash{background:var(--bluewash)}
 .badge{display:inline-flex;align-items:center;gap:8px;padding:6px 13px;border:1px solid var(--red);
@@ -106,11 +106,28 @@ a:hover{color:#7E3120}
 .d4{animation-delay:.36s}.d5{animation-delay:.46s}.d6{animation-delay:.56s}
 .d7{animation-delay:.66s}.d8{animation-delay:.76s}
 @media (prefers-reduced-motion:reduce){.a,.f,.aline{animation:none!important}}
+
+/* 통합 애니메이션 (제3면) */
+@keyframes mvIn{from{opacity:0;transform:translateX(-24px)}to{opacity:1;transform:none}}
+@keyframes sweepGo{0%{transform:scaleX(0);opacity:0}18%{opacity:1}100%{transform:scaleX(1);opacity:0}}
+@keyframes popIn{from{opacity:0;transform:translateY(13px) scaleY(.74)}to{opacity:1;transform:none}}
+@keyframes plsIn{0%{box-shadow:0 0 0 0 rgba(40,73,122,.45)}100%{box-shadow:0 0 0 18px rgba(40,73,122,0)}}
+@keyframes arrowIn{0%{opacity:0;transform:translateX(-12px)}60%{opacity:1;transform:translateX(4px)}100%{opacity:1;transform:none}}
+.mv{animation:mvIn .5s cubic-bezier(.2,.72,.25,1) both}
+.sweep{position:absolute;left:0;right:0;height:2px;background:var(--red);
+  transform-origin:left center;pointer-events:none;
+  animation:sweepGo .8s cubic-bezier(.45,.05,.3,1) both}
+.pop{animation:popIn .44s cubic-bezier(.2,.72,.25,1) both;transform-origin:top center}
+.pls{animation:plsIn .9s ease-out both}
+.pop.pls{animation:popIn .44s cubic-bezier(.2,.72,.25,1) both, plsIn .9s ease-out both}
+.arw{animation:arrowIn .5s cubic-bezier(.2,.72,.25,1) both}
+@media (prefers-reduced-motion:reduce){.mv,.sweep,.pop,.pls,.arw{animation:none!important}}
+
 </style>
 </helmet>
 <div class="slide"><div class="topbar"><span class="tick f" style="background:var(--blue);width:82%"></span></div>
   <p class="kicker a d1">제7장 &nbsp;제89~92조 &nbsp;·&nbsp; 신설</p>
-  <h1 class="h1 a d2">개별학생교육지원, 순서대로</h1>
+  <h1 class="h1 a d2">개별학생교육지원</h1>
   <div class="rule aline d3"></div>
   
   <div class="body"><div class="block wash a d4" style="display:flex;gap:22px;align-items:center;padding:11px 22px">

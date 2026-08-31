@@ -10,9 +10,9 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;600;800&amp;family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&amp;display=swap">
   <style>
 :root{
-  --paper:#FAF7F2; --paper2:#F1ECE2; --ink:#1C1A17; --ink2:#443E36;
-  --muted:#7B7367; --rule:#DBD4C7; --hair:#E8E2D7;
-  --red:#A0402C; --blue:#2C5183; --redwash:#F5E8E3; --bluewash:#E6EDF5;
+  --paper:#FFFFFF; --paper2:#F0EFEC; --ink:#171614; --ink2:#33302B;
+  --muted:#59544C; --rule:#C6C1B8; --hair:#DEDAD2;
+  --red:#9C3B26; --blue:#28497A; --redwash:#F8EBE6; --bluewash:#E9EFF7;
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink);
@@ -65,7 +65,7 @@ a:hover{color:#7E3120}
 /* 블록 */
 .block{padding:18px 22px;background:var(--paper2)}
 .block.blue{background:var(--blue);color:var(--paper)}
-.block.blue .lab,.block.blue .t16{color:rgba(250,247,242,.72)}
+.block.blue .lab,.block.blue .t16{color:rgba(255,255,255,.86)}
 .block.red{background:var(--redwash)}
 .block.wash{background:var(--bluewash)}
 .badge{display:inline-flex;align-items:center;gap:8px;padding:6px 13px;border:1px solid var(--red);
@@ -106,53 +106,66 @@ a:hover{color:#7E3120}
 .d4{animation-delay:.36s}.d5{animation-delay:.46s}.d6{animation-delay:.56s}
 .d7{animation-delay:.66s}.d8{animation-delay:.76s}
 @media (prefers-reduced-motion:reduce){.a,.f,.aline{animation:none!important}}
+
+/* 통합 애니메이션 (제3면) */
+@keyframes mvIn{from{opacity:0;transform:translateX(-24px)}to{opacity:1;transform:none}}
+@keyframes sweepGo{0%{transform:scaleX(0);opacity:0}18%{opacity:1}100%{transform:scaleX(1);opacity:0}}
+@keyframes popIn{from{opacity:0;transform:translateY(13px) scaleY(.74)}to{opacity:1;transform:none}}
+@keyframes plsIn{0%{box-shadow:0 0 0 0 rgba(40,73,122,.45)}100%{box-shadow:0 0 0 18px rgba(40,73,122,0)}}
+@keyframes arrowIn{0%{opacity:0;transform:translateX(-12px)}60%{opacity:1;transform:translateX(4px)}100%{opacity:1;transform:none}}
+.mv{animation:mvIn .5s cubic-bezier(.2,.72,.25,1) both}
+.sweep{position:absolute;left:0;right:0;height:2px;background:var(--red);
+  transform-origin:left center;pointer-events:none;
+  animation:sweepGo .8s cubic-bezier(.45,.05,.3,1) both}
+.pop{animation:popIn .44s cubic-bezier(.2,.72,.25,1) both;transform-origin:top center}
+.pls{animation:plsIn .9s ease-out both}
+.pop.pls{animation:popIn .44s cubic-bezier(.2,.72,.25,1) both, plsIn .9s ease-out both}
+.arw{animation:arrowIn .5s cubic-bezier(.2,.72,.25,1) both}
+@media (prefers-reduced-motion:reduce){.mv,.sweep,.pop,.pls,.arw{animation:none!important}}
+
 </style>
 </helmet>
 <div class="slide"><div class="topbar"><span class="tick f" style="background:var(--ink);width:27%"></span></div>
   <p class="kicker a d1">구조</p>
-  <h1 class="h1 a d2">규정 <em>11권</em>이 <b>1권</b>이 됐습니다</h1>
+  <h1 class="h1 a d2">규정 <em>7권</em>이 <b>1권</b>이 됐습니다</h1>
   <div class="rule aline d3"></div>
   
-  <div class="body"><div class="cols" style="gap:30px;align-items:stretch">
+  <div class="body"><div class="cols" style="gap:30px;align-items:stretch;position:relative">
+    <div class="sweep" style="top:52%;animation-delay:.82s"></div>
     <div class="col" style="flex:0 0 400px">
-      <div class="lab a d4">전 &nbsp;·&nbsp; 2022 &nbsp;—&nbsp; 11개 독립 규정</div>
-      <div class="a d4" style="display:flex;flex-direction:column;gap:0;margin-top:2px">
-        <div style="display:flex;gap:12px;padding:7px 0;border-top:1px solid var(--hair);font-size:17px">
-          <span class="art" style="min-width:16px">1</span><span>학생생활규정 제정·개정 절차</span></div><div style="display:flex;gap:12px;padding:7px 0;border-top:1px solid var(--hair);font-size:17px">
-          <span class="art" style="min-width:16px">2</span><span>학생회 운영 규정</span></div><div style="display:flex;gap:12px;padding:7px 0;border-top:1px solid var(--hair);font-size:17px">
-          <span class="art" style="min-width:16px">3</span><span>학생 선도 규정</span></div><div style="display:flex;gap:12px;padding:7px 0;border-top:1px solid var(--hair);font-size:17px">
-          <span class="art" style="min-width:16px">4</span><span>교내·외 생활 규정</span></div><div style="display:flex;gap:12px;padding:7px 0;border-top:1px solid var(--hair);font-size:17px">
-          <span class="art" style="min-width:16px">5</span><span>복장 및 용의 규정</span></div><div style="display:flex;gap:12px;padding:7px 0;border-top:1px solid var(--hair);font-size:17px">
-          <span class="art" style="min-width:16px">6</span><span>학생 생활 평점제 규정</span></div><div style="display:flex;gap:12px;padding:7px 0;border-top:1px solid var(--hair);font-size:17px">
-          <span class="art" style="min-width:16px">7</span><span>생활지도위원회 규정</span></div>
-        <div style="display:flex;gap:12px;padding:7px 0;border-top:1px solid var(--hair);font-size:17px;color:var(--muted)">
-          <span class="art" style="min-width:36px">8–11</span>
-          <span>영상정보처리기기 · 현장체험학습 · 안전영향평가단 · 학교장추천전형</span></div>
+      <div class="lab a d4">전 &nbsp;·&nbsp; 2022 &nbsp;—&nbsp; 흩어져 있던 7개 규정</div>
+      <div style="display:flex;flex-direction:column;gap:0;margin-top:2px">
+        <div class="mv" style="display:flex;gap:12px;padding:9px 0;border-top:1px solid var(--hair);font-size:17px;animation-delay:0.400s"><span class="art" style="min-width:16px">1</span><span>학생생활규정 제정·개정 절차</span></div>
+        <div class="mv" style="display:flex;gap:12px;padding:9px 0;border-top:1px solid var(--hair);font-size:17px;animation-delay:0.455s"><span class="art" style="min-width:16px">2</span><span>학생회 운영 규정</span></div>
+        <div class="mv" style="display:flex;gap:12px;padding:9px 0;border-top:1px solid var(--hair);font-size:17px;animation-delay:0.510s"><span class="art" style="min-width:16px">3</span><span>학생 선도 규정</span></div>
+        <div class="mv" style="display:flex;gap:12px;padding:9px 0;border-top:1px solid var(--hair);font-size:17px;animation-delay:0.565s"><span class="art" style="min-width:16px">4</span><span>교내·외 생활 규정</span></div>
+        <div class="mv" style="display:flex;gap:12px;padding:9px 0;border-top:1px solid var(--hair);font-size:17px;animation-delay:0.620s"><span class="art" style="min-width:16px">5</span><span>복장 및 용의 규정</span></div>
+        <div class="mv" style="display:flex;gap:12px;padding:9px 0;border-top:1px solid var(--hair);font-size:17px;animation-delay:0.675s"><span class="art" style="min-width:16px">6</span><span>학생 생활 평점제 규정</span></div>
+        <div class="mv" style="display:flex;gap:12px;padding:9px 0;border-top:1px solid var(--hair);font-size:17px;animation-delay:0.730s"><span class="art" style="min-width:16px">7</span><span>생활지도위원회 규정</span></div>
       </div>
-      <div class="t16 a d5" style="margin-top:4px">↳ 8–11번은 <b style="color: var(--ink2)">통합하지 않고 별도 규정으로 유지</b>합니다</div>
     </div>
-    <div class="a d5" style="align-self:center;padding:0 4px"><svg width="30" height="12" viewBox="0 0 30 12" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M0 6h27M21.5 1.2L26.8 6l-5.3 4.8"></path></svg></div>
+    <div class="arw" style="align-self:center;padding:0 4px;animation-delay:.86s"><svg width="30" height="12" viewBox="0 0 30 12" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M0 6h27M21.5 1.2L26.8 6l-5.3 4.8"></path></svg></div>
     <div class="col" style="flex:1">
-      <div class="lab a d5">후 &nbsp;·&nbsp; 2026 &nbsp;—&nbsp; 학생생활규정 한 권 &nbsp;·&nbsp; 4편 9장 116조</div>
-      <div class="a d6" style="display:flex;flex-direction:column;gap:8px">
-        <div class="block" style="display:flex;justify-content:space-between;align-items:baseline;gap:16px">
+      <div class="lab a" style="animation-delay:1.0s">후 &nbsp;·&nbsp; 2026 &nbsp;—&nbsp; 학생생활규정 한 권 &nbsp;·&nbsp; 4편 9장 116조</div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div class="block pop" style="animation-delay:1.14s;display:flex;justify-content:space-between;align-items:baseline;gap:16px">
           <span class="t20">제1편 &nbsp;총칙</span>
           <span class="t16">제1~15조 &nbsp;·&nbsp; 옮겨 담음 + 제1~5조 신설</span></div>
-        <div class="block" style="display:flex;justify-content:space-between;align-items:baseline;gap:16px">
+        <div class="block pop" style="animation-delay:1.24s;display:flex;justify-content:space-between;align-items:baseline;gap:16px">
           <span class="t20">제2편 &nbsp;학생의 학교생활</span>
           <span class="t16">제16~73조 &nbsp;·&nbsp; 그대로 + 제31조 신설</span></div>
-        <div class="block blue" style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:22px">
+        <div class="block blue pop pls" style="animation-delay:1.34s,1.85s;display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:22px">
           <span class="t20" style="font-weight:600">제3편 &nbsp;생활지도와 교육지원</span>
           <span class="t16" style="color:rgba(250,247,242,.85)">제74~100조 &nbsp;·&nbsp; <b>제74~95조 전부 신설</b></span></div>
-        <div class="block" style="display:flex;justify-content:space-between;align-items:baseline;gap:16px">
+        <div class="block pop" style="animation-delay:1.44s;display:flex;justify-content:space-between;align-items:baseline;gap:16px">
           <span class="t20">제4편 &nbsp;징계</span>
           <span class="t16">제101~116조 &nbsp;·&nbsp; 그대로</span></div>
       </div>
-      <div class="t18 a d7" style="margin-top:4px">복장·용의, 상벌점, 징계 기준은 <b style="color: var(--ink)">내용이 그대로</b>입니다.
+      <div class="t18 a" style="margin-top:4px;animation-delay:1.9s">복장·용의, 상벌점, 징계 기준은 <b style="color: var(--ink)">내용이 그대로</b>입니다.
 <br>&nbsp;새로 생긴 건 <b style="color: var(--blue)">제3편 제6·7장</b> 입니다.</div>
     </div>
   </div>
-  <div class="note f d8" style="width: 1131px; height: 57px"><br></div></div>
+  </div>
   <div class="foot f d6"><span>교직원 연수 · 학생생활규정 전부개정</span><span>03 / 11</span></div></div>
 </x-dc>
 </body>

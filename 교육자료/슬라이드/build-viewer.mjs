@@ -65,7 +65,7 @@ ${sharedStyle}
 
 /* ── 뷰어 ── */
 html,body{height:100%}
-body{background:#5c5852;display:flex;align-items:center;justify-content:center;overflow:hidden}
+body{background:#4a4844;display:flex;align-items:center;justify-content:center;overflow:hidden}
 #stage{position:relative;width:1280px;height:720px;transform-origin:center center;
   box-shadow:0 18px 60px rgba(0,0,0,.34)}
 .slidewrap{position:absolute;inset:0;display:none}
@@ -75,7 +75,12 @@ body{background:#5c5852;display:flex;align-items:center;justify-content:center;o
 /* 활성 슬라이드에서만 등장 효과가 다시 돈다 (animation-name 만 건드려 지연값은 보존) */
 .slidewrap:not(.is-active) .a,
 .slidewrap:not(.is-active) .f,
-.slidewrap:not(.is-active) .aline{animation-name:none}
+.slidewrap:not(.is-active) .aline,
+.slidewrap:not(.is-active) .mv,
+.slidewrap:not(.is-active) .sweep,
+.slidewrap:not(.is-active) .pop,
+.slidewrap:not(.is-active) .pls,
+.slidewrap:not(.is-active) .arw{animation-name:none}
 
 /* ── 하단 바 ── */
 #bar{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:20;
@@ -86,7 +91,7 @@ body{background:#5c5852;display:flex;align-items:center;justify-content:center;o
 #bar button{font:inherit;color:inherit;background:transparent;border:0;padding:7px 11px;
   cursor:pointer;border-radius:2px;letter-spacing:.02em}
 #bar button:hover{background:rgba(255,255,255,.14)}
-#bar button[aria-pressed="true"]{background:#A0402C;color:#fff}
+#bar button[aria-pressed="true"]{background:#9C3B26;color:#fff}
 #count{padding:0 12px;font-variant-numeric:tabular-nums;opacity:.72;white-space:nowrap}
 #bar .sep{width:1px;height:20px;background:rgba(255,255,255,.2);margin:0 3px}
 
@@ -100,10 +105,10 @@ body{background:#5c5852;display:flex;align-items:center;justify-content:center;o
 .gcell{cursor:pointer;border:0;background:none;padding:0;text-align:left;font:inherit}
 .gthumb{width:100%;aspect-ratio:16/9;overflow:hidden;position:relative;outline:1px solid rgba(255,255,255,.16)}
 .gthumb > .slide{position:absolute;top:0;left:0;transform:scale(.209);transform-origin:top left}
-.gcell:hover .gthumb{outline:2px solid #A0402C}
+.gcell:hover .gthumb{outline:2px solid #9C3B26}
 .gcap{margin-top:7px;font:500 12.5px/1.45 'IBM Plex Sans KR',system-ui,sans-serif;color:#CFC8BC}
 .gcap b{color:#8E877B;font-weight:600;margin-right:7px;font-variant-numeric:tabular-nums}
-.gthumb .a,.gthumb .f,.gthumb .aline{animation-name:none}
+.gthumb .a,.gthumb .f,.gthumb .aline,.gthumb .mv,.gthumb .sweep,.gthumb .pop,.gthumb .pls,.gthumb .arw{animation-name:none}
 
 /* ── 인쇄 (Ctrl+P → PDF로 저장). 웹폰트가 그대로 살아 있다 ── */
 @page{size:13.333in 7.5in;margin:0}
@@ -114,7 +119,7 @@ body{background:#5c5852;display:flex;align-items:center;justify-content:center;o
   .slidewrap{position:static;display:block!important;break-after:page;page-break-after:always}
   .slidewrap:last-child{break-after:auto;page-break-after:auto}
   .slidewrap .slide{position:relative;inset:auto;width:1280px;height:720px}
-  .slidewrap .a,.slidewrap .f,.slidewrap .aline{animation-name:none}
+  .slidewrap .a,.slidewrap .f,.slidewrap .aline,.slidewrap .mv,.slidewrap .sweep,.slidewrap .pop,.slidewrap .pls,.slidewrap .arw{animation-name:none}
 }
 </style>
 </head>
