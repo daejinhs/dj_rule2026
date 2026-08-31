@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;600;800&family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&display=swap">
+  <style>
+:root{
+  --paper:#FAF7F2; --paper2:#F1ECE2; --ink:#1C1A17; --ink2:#443E36;
+  --muted:#7B7367; --rule:#DBD4C7; --hair:#E8E2D7;
+  --red:#A0402C; --blue:#2C5183; --redwash:#F5E8E3; --bluewash:#E6EDF5;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:'IBM Plex Sans KR','맑은 고딕','Malgun Gothic',sans-serif;
+  font-weight:400;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:var(--red);text-decoration:none}
+a:hover{color:#7E3120}
+.slide{width:1280px;height:720px;background:var(--paper);position:relative;
+  padding:66px 76px 64px;display:flex;flex-direction:column;overflow:hidden}
+.sv{font-family:'Hahmlet','함초롬바탕','HCR Batang','Batang',serif;font-feature-settings:"palt" 1}
+
+/* 상단 진행 괘선 */
+.topbar{position:absolute;top:0;left:0;right:0;height:3px;background:var(--hair)}
+.tick{position:absolute;left:0;top:0;height:3px;transform-origin:left center}
+
+/* 머리 */
+.kicker{font-size:16px;font-weight:600;letter-spacing:.15em;color:var(--muted);margin:0 0 14px}
+.h1{font-family:'Hahmlet','함초롬바탕','HCR Batang','Batang',serif;
+  font-size:54px;font-weight:800;line-height:1.16;letter-spacing:-.025em;margin:0}
+.h1 em{font-style:normal;color:var(--red)}
+.h1 b{font-weight:800;color:var(--blue)}
+.rule{height:1px;background:var(--ink);opacity:.9;transform-origin:left center;margin:22px 0 0}
+.rule.red{background:var(--red)}
+.lead{font-size:20px;line-height:1.62;color:var(--ink2);margin:18px 0 0;max-width:900px}
+
+/* 본문 */
+.body{flex:1;display:flex;flex-direction:column;padding-top:26px;min-height:0}
+.cols{display:flex;gap:44px;flex:1;min-height:0}
+.col{flex:1;display:flex;flex-direction:column;gap:14px;min-width:0}
+.vhair{width:1px;background:var(--hair);align-self:stretch}
+.lab{font-size:14px;font-weight:600;letter-spacing:.13em;color:var(--muted)}
+.lab.red{color:var(--red)}
+.lab.blue{color:var(--blue)}
+.t22{font-size:22px;font-weight:600;line-height:1.5}
+.t20{font-size:20px;font-weight:500;line-height:1.55}
+.t18{font-size:18px;line-height:1.62;color:var(--ink2)}
+.t16{font-size:16px;line-height:1.62;color:var(--muted)}
+.art{font-size:14px;font-weight:600;letter-spacing:.04em;color:var(--muted);
+  font-variant-numeric:tabular-nums}
+
+/* 목록 */
+.rows{display:flex;flex-direction:column}
+.row{display:flex;gap:24px;align-items:flex-start;padding:16px 0;border-top:1px solid var(--hair)}
+.row:first-child{border-top:0}
+.num{font-family:'Hahmlet','함초롬바탕','Batang',serif;font-size:30px;font-weight:600;
+  color:var(--red);line-height:1;min-width:52px;font-variant-numeric:tabular-nums}
+.bul{display:flex;gap:11px;align-items:flex-start}
+.dot{width:5px;height:5px;border-radius:50%;background:var(--muted);margin-top:11px;flex:none}
+
+/* 블록 */
+.block{padding:18px 22px;background:var(--paper2)}
+.block.blue{background:var(--blue);color:var(--paper)}
+.block.blue .lab,.block.blue .t16{color:rgba(250,247,242,.72)}
+.block.red{background:var(--redwash)}
+.block.wash{background:var(--bluewash)}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:6px 13px;border:1px solid var(--red);
+  color:var(--red);font-size:14px;font-weight:600;letter-spacing:.05em}
+.tag{display:inline-block;padding:3px 9px;font-size:13px;font-weight:600;letter-spacing:.04em}
+.tag.blue{background:var(--blue);color:var(--paper)}
+.tag.ghost{border:1px solid var(--rule);color:var(--muted)}
+
+/* 격자 */
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px}
+.cell{padding:18px 20px 18px 0;border-top:1px solid var(--hair)}
+
+/* 바닥 */
+.foot{position:absolute;left:76px;right:76px;bottom:26px;display:flex;
+  justify-content:space-between;align-items:baseline;font-size:13px;color:var(--muted);
+  letter-spacing:.08em;font-variant-numeric:tabular-nums}
+.note{font-size:15px;line-height:1.6;color:var(--muted);border-top:1px solid var(--hair);
+  padding-top:13px;margin-top:auto}
+.note b{color:var(--red);font-weight:600}
+.band{margin-top:auto;padding:16px 22px;background:var(--red);color:var(--paper);
+  font-size:19px;font-weight:500;letter-spacing:-.01em}
+
+/* 표지 */
+.cover{padding:0 76px;justify-content:center}
+.cover .big{font-family:'Hahmlet','함초롬바탕','HCR Batang','Batang',serif;
+  font-size:104px;font-weight:800;line-height:1.06;letter-spacing:-.035em;margin:0}
+.cover .big em{font-style:normal;color:var(--red)}
+
+/* 등장 */
+@keyframes rise{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+@keyframes draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.a{animation:rise .58s cubic-bezier(.2,.72,.25,1) both}
+.f{animation:fade .7s ease both}
+.aline{animation:draw .72s cubic-bezier(.2,.72,.25,1) both}
+.d1{animation-delay:.06s}.d2{animation-delay:.16s}.d3{animation-delay:.26s}
+.d4{animation-delay:.36s}.d5{animation-delay:.46s}.d6{animation-delay:.56s}
+.d7{animation-delay:.66s}.d8{animation-delay:.76s}
+@media (prefers-reduced-motion:reduce){.a,.f,.aline{animation:none!important}}
+</style>
+</helmet>
+<div class="slide"><div class="topbar"><span class="tick f" style="background:var(--blue);width:82%"></span></div>
+  <p class="kicker a d1">제7장 &nbsp;제89~92조 &nbsp;·&nbsp; 신설</p>
+  <h1 class="h1 a d2">개별학생교육지원, 순서대로</h1>
+  <div class="rule aline d3"></div>
+  
+  <div class="body"><div class="block wash a d4" style="display:flex;gap:22px;align-items:center;padding:15px 22px">
+    <span class="lab blue" style="min-width:76px">실시 요건</span>
+    <span class="t18" style="color:var(--ink)">수업 중 <b>2회 이상 주의</b>했는데 방해를 반복·지속 &nbsp;·&nbsp; 또는 <b>고성·폭언 등 소란</b>으로 교육활동을 심각하게 방해
+      &nbsp;+&nbsp; 다른 학생 학습권 보호가 필요할 것</span></div>
+  <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 32px;margin-top:4px">
+    <div class="cell a d5" style="padding:15px 0">
+      <div style="display:flex;gap:11px;align-items:baseline">
+        <span class="num" style="font-size:23px;min-width:20px;color:var(--blue)">1</span>
+        <span class="t20">설명과 협조 요청</span></div>
+      <div class="t16" style="margin-top:5px;padding-left:31px">사유와 필요성을 학생에게 설명하고, 가능하면 자발적 협조를 먼저 요청</div></div><div class="cell a d5" style="padding:15px 0">
+      <div style="display:flex;gap:11px;align-items:baseline">
+        <span class="num" style="font-size:23px;min-width:20px;color:var(--blue)">2</span>
+        <span class="t20">별도 공간에서 실시</span></div>
+      <div class="t16" style="margin-top:5px;padding-left:31px">교실 내 지정 공간 / 교실 외 교내 공간 / 실외수업 시 분리된 공간</div></div><div class="cell a d5" style="padding:15px 0">
+      <div style="display:flex;gap:11px;align-items:baseline">
+        <span class="num" style="font-size:23px;min-width:20px;color:var(--blue)">3</span>
+        <span class="t20">학교장 보고</span></div>
+      <div class="t16" style="margin-top:5px;padding-left:31px">일시 · 경위 · 실시 장소 · 지원 내용</div></div><div class="cell a d6" style="padding:15px 0">
+      <div style="display:flex;gap:11px;align-items:baseline">
+        <span class="num" style="font-size:23px;min-width:20px;color:var(--blue)">4</span>
+        <span class="t20">보호자 통지</span></div>
+      <div class="t16" style="margin-top:5px;padding-left:31px">학교장이 알리고, 필요 시 인계 · 상담 · 가정연계 협의</div></div><div class="cell a d6" style="padding:15px 0">
+      <div style="display:flex;gap:11px;align-items:baseline">
+        <span class="num" style="font-size:23px;min-width:20px;color:var(--blue)">5</span>
+        <span class="t20">거부 · 반복되면</span></div>
+      <div class="t16" style="margin-top:5px;padding-left:31px">보호자 인계 요청 → 가정학습 (출석 인정, 학교장이 상황 점검)</div></div><div class="cell a d6" style="padding:15px 0">
+      <div style="display:flex;gap:11px;align-items:baseline">
+        <span class="num" style="font-size:23px;min-width:20px;color:var(--blue)">6</span>
+        <span class="t20">그래도 반복되면</span></div>
+      <div class="t16" style="margin-top:5px;padding-left:31px">교육감에게 지원 요청 / 반복·장시간은 학생생활교육위원회 심의</div></div>
+  </div>
+  <div class="block blue a d8" style="margin-top:14px;display:flex;gap:26px;align-items:center">
+    <span class="sv" style="font-size:27px;font-weight:700;letter-spacing:-.02em">돌아올 수 있다고 판단되면 즉시 수업에 복귀시켜야 합니다</span>
+    <span class="t16" style="margin-left:auto;white-space:nowrap">제92조②</span></div>
+  <div class="note f d8">벌이 아닙니다 — <b>행동 개선 · 학습 회복 · 관계 회복을 지원하기 위한 교육적 조치</b>입니다 (제89조③).
+    학습이 끊기지 않도록 교과서 요약 · 학습과제 · 상담 · 성찰활동을 제공합니다 (제92조④).</div></div>
+  <div class="foot f d6"><span>교직원 연수 · 학생생활규정 전부개정</span><span>09 / 11</span></div></div>
+</x-dc>
+</body>
+</html>

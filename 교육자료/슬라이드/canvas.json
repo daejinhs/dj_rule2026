@@ -1,0 +1,170 @@
+{
+  "artboards": [
+    {
+      "file": "StudentCover.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 1280,
+      "h": 720,
+      "page": "student"
+    },
+    {
+      "file": "StudentStructure.dc.html",
+      "x": 1400,
+      "y": 0,
+      "w": 1280,
+      "h": 720,
+      "page": "student"
+    },
+    {
+      "file": "StudentPhone.dc.html",
+      "x": 2800,
+      "y": 0,
+      "w": 1280,
+      "h": 720,
+      "page": "student"
+    },
+    {
+      "file": "StudentPhoneSteps.dc.html",
+      "x": 4200,
+      "y": 0,
+      "w": 1280,
+      "h": 720,
+      "page": "student"
+    },
+    {
+      "file": "StudentNotPunishment.dc.html",
+      "x": 0,
+      "y": 900,
+      "w": 1280,
+      "h": 720,
+      "page": "student"
+    },
+    {
+      "file": "StudentSupport.dc.html",
+      "x": 1400,
+      "y": 900,
+      "w": 1280,
+      "h": 720,
+      "page": "student"
+    },
+    {
+      "file": "StudentItems.dc.html",
+      "x": 2800,
+      "y": 900,
+      "w": 1280,
+      "h": 720,
+      "page": "student"
+    },
+    {
+      "file": "StudentRights.dc.html",
+      "x": 4200,
+      "y": 900,
+      "w": 1280,
+      "h": 720,
+      "page": "student"
+    },
+    {
+      "file": "Main.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 1280,
+      "h": 720,
+      "page": "staff"
+    },
+    {
+      "file": "Takeaways.dc.html",
+      "x": 1400,
+      "y": 0,
+      "w": 1280,
+      "h": 720,
+      "page": "staff"
+    },
+    {
+      "file": "Structure.dc.html",
+      "x": 2800,
+      "y": 0,
+      "w": 1280,
+      "h": 720,
+      "page": "staff"
+    },
+    {
+      "file": "Terms.dc.html",
+      "x": 4200,
+      "y": 0,
+      "w": 1280,
+      "h": 720,
+      "page": "staff"
+    },
+    {
+      "file": "Methods.dc.html",
+      "x": -518,
+      "y": 983,
+      "w": 1280,
+      "h": 720,
+      "page": "staff"
+    },
+    {
+      "file": "Redlines.dc.html",
+      "x": 1400,
+      "y": 900,
+      "w": 1280,
+      "h": 720,
+      "page": "staff"
+    },
+    {
+      "file": "Restraint.dc.html",
+      "x": 2800,
+      "y": 900,
+      "w": 1280,
+      "h": 720,
+      "page": "staff"
+    },
+    {
+      "file": "Records.dc.html",
+      "x": 4200,
+      "y": 900,
+      "w": 1280,
+      "h": 720,
+      "page": "staff"
+    },
+    {
+      "file": "Support.dc.html",
+      "x": 0,
+      "y": 1800,
+      "w": 1280,
+      "h": 720,
+      "page": "staff"
+    },
+    {
+      "file": "SchoolOps.dc.html",
+      "x": 1400,
+      "y": 1800,
+      "w": 1280,
+      "h": 720,
+      "page": "staff"
+    },
+    {
+      "file": "Devices.dc.html",
+      "x": 2800,
+      "y": 1800,
+      "w": 1280,
+      "h": 720,
+      "page": "staff"
+    }
+  ],
+  "launch": {
+    "view": "canvas",
+    "page": "staff"
+  },
+  "pages": [
+    {
+      "id": "staff",
+      "name": "교직원 연수 (11장)"
+    },
+    {
+      "id": "student",
+      "name": "학생 교육 (8장)"
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;600;800&family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&display=swap">
+  <style>
+:root{
+  --paper:#FAF7F2; --paper2:#F1ECE2; --ink:#1C1A17; --ink2:#443E36;
+  --muted:#7B7367; --rule:#DBD4C7; --hair:#E8E2D7;
+  --red:#A0402C; --blue:#2C5183; --redwash:#F5E8E3; --bluewash:#E6EDF5;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:'IBM Plex Sans KR','맑은 고딕','Malgun Gothic',sans-serif;
+  font-weight:400;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:var(--red);text-decoration:none}
+a:hover{color:#7E3120}
+.slide{width:1280px;height:720px;background:var(--paper);position:relative;
+  padding:66px 76px 64px;display:flex;flex-direction:column;overflow:hidden}
+.sv{font-family:'Hahmlet','함초롬바탕','HCR Batang','Batang',serif;font-feature-settings:"palt" 1}
+
+/* 상단 진행 괘선 */
+.topbar{position:absolute;top:0;left:0;right:0;height:3px;background:var(--hair)}
+.tick{position:absolute;left:0;top:0;height:3px;transform-origin:left center}
+
+/* 머리 */
+.kicker{font-size:16px;font-weight:600;letter-spacing:.15em;color:var(--muted);margin:0 0 14px}
+.h1{font-family:'Hahmlet','함초롬바탕','HCR Batang','Batang',serif;
+  font-size:54px;font-weight:800;line-height:1.16;letter-spacing:-.025em;margin:0}
+.h1 em{font-style:normal;color:var(--red)}
+.h1 b{font-weight:800;color:var(--blue)}
+.rule{height:1px;background:var(--ink);opacity:.9;transform-origin:left center;margin:22px 0 0}
+.rule.red{background:var(--red)}
+.lead{font-size:20px;line-height:1.62;color:var(--ink2);margin:18px 0 0;max-width:900px}
+
+/* 본문 */
+.body{flex:1;display:flex;flex-direction:column;padding-top:26px;min-height:0}
+.cols{display:flex;gap:44px;flex:1;min-height:0}
+.col{flex:1;display:flex;flex-direction:column;gap:14px;min-width:0}
+.vhair{width:1px;background:var(--hair);align-self:stretch}
+.lab{font-size:14px;font-weight:600;letter-spacing:.13em;color:var(--muted)}
+.lab.red{color:var(--red)}
+.lab.blue{color:var(--blue)}
+.t22{font-size:22px;font-weight:600;line-height:1.5}
+.t20{font-size:20px;font-weight:500;line-height:1.55}
+.t18{font-size:18px;line-height:1.62;color:var(--ink2)}
+.t16{font-size:16px;line-height:1.62;color:var(--muted)}
+.art{font-size:14px;font-weight:600;letter-spacing:.04em;color:var(--muted);
+  font-variant-numeric:tabular-nums}
+
+/* 목록 */
+.rows{display:flex;flex-direction:column}
+.row{display:flex;gap:24px;align-items:flex-start;padding:16px 0;border-top:1px solid var(--hair)}
+.row:first-child{border-top:0}
+.num{font-family:'Hahmlet','함초롬바탕','Batang',serif;font-size:30px;font-weight:600;
+  color:var(--red);line-height:1;min-width:52px;font-variant-numeric:tabular-nums}
+.bul{display:flex;gap:11px;align-items:flex-start}
+.dot{width:5px;height:5px;border-radius:50%;background:var(--muted);margin-top:11px;flex:none}
+
+/* 블록 */
+.block{padding:18px 22px;background:var(--paper2)}
+.block.blue{background:var(--blue);color:var(--paper)}
+.block.blue .lab,.block.blue .t16{color:rgba(250,247,242,.72)}
+.block.red{background:var(--redwash)}
+.block.wash{background:var(--bluewash)}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:6px 13px;border:1px solid var(--red);
+  color:var(--red);font-size:14px;font-weight:600;letter-spacing:.05em}
+.tag{display:inline-block;padding:3px 9px;font-size:13px;font-weight:600;letter-spacing:.04em}
+.tag.blue{background:var(--blue);color:var(--paper)}
+.tag.ghost{border:1px solid var(--rule);color:var(--muted)}
+
+/* 격자 */
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px}
+.cell{padding:18px 20px 18px 0;border-top:1px solid var(--hair)}
+
+/* 바닥 */
+.foot{position:absolute;left:76px;right:76px;bottom:26px;display:flex;
+  justify-content:space-between;align-items:baseline;font-size:13px;color:var(--muted);
+  letter-spacing:.08em;font-variant-numeric:tabular-nums}
+.note{font-size:15px;line-height:1.6;color:var(--muted);border-top:1px solid var(--hair);
+  padding-top:13px;margin-top:auto}
+.note b{color:var(--red);font-weight:600}
+.band{margin-top:auto;padding:16px 22px;background:var(--red);color:var(--paper);
+  font-size:19px;font-weight:500;letter-spacing:-.01em}
+
+/* 표지 */
+.cover{padding:0 76px;justify-content:center}
+.cover .big{font-family:'Hahmlet','함초롬바탕','HCR Batang','Batang',serif;
+  font-size:104px;font-weight:800;line-height:1.06;letter-spacing:-.035em;margin:0}
+.cover .big em{font-style:normal;color:var(--red)}
+
+/* 등장 */
+@keyframes rise{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+@keyframes draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.a{animation:rise .58s cubic-bezier(.2,.72,.25,1) both}
+.f{animation:fade .7s ease both}
+.aline{animation:draw .72s cubic-bezier(.2,.72,.25,1) both}
+.d1{animation-delay:.06s}.d2{animation-delay:.16s}.d3{animation-delay:.26s}
+.d4{animation-delay:.36s}.d5{animation-delay:.46s}.d6{animation-delay:.56s}
+.d7{animation-delay:.66s}.d8{animation-delay:.76s}
+@media (prefers-reduced-motion:reduce){.a,.f,.aline{animation:none!important}}
+</style>
+</helmet>
+<div class="slide"><div class="topbar"><span class="tick f" style="background:var(--red);width:55%"></span></div>
+  <p class="kicker a d1">제77조③ &nbsp;·&nbsp; 제82조④ &nbsp;·&nbsp; 제85조③</p>
+  <h1 class="h1 a d2"><em>넘으면 안 되는 선</em></h1>
+  <div class="rule aline d3"></div>
+  
+  <div class="body"><div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:0">
+    <div class="a d4" style="display:flex;gap:20px;align-items:flex-start;padding:20px 0;border-top:1px solid var(--hair)">
+      <svg width="19" height="19" viewBox="0 0 20 20" fill="none" stroke="var(--red)" stroke-width="1.9" stroke-linecap="round" style="flex:none;margin-top:5px"><path d="M5.2 5.2l9.6 9.6M14.8 5.2l-9.6 9.6"/></svg><span class="sv" style="font-size:34px;font-weight:600;letter-spacing:-.02em;line-height:1.3">체벌</span></div><div class="a d5" style="display:flex;gap:20px;align-items:flex-start;padding:20px 0;border-top:1px solid var(--hair)">
+      <svg width="19" height="19" viewBox="0 0 20 20" fill="none" stroke="var(--red)" stroke-width="1.9" stroke-linecap="round" style="flex:none;margin-top:5px"><path d="M5.2 5.2l9.6 9.6M14.8 5.2l-9.6 9.6"/></svg><span class="sv" style="font-size:34px;font-weight:600;letter-spacing:-.02em;line-height:1.3">모욕 · 조롱 등 학생의 인권을 침해하는 방식</span></div><div class="a d6" style="display:flex;gap:20px;align-items:flex-start;padding:20px 0;border-top:1px solid var(--hair)">
+      <svg width="19" height="19" viewBox="0 0 20 20" fill="none" stroke="var(--red)" stroke-width="1.9" stroke-linecap="round" style="flex:none;margin-top:5px"><path d="M5.2 5.2l9.6 9.6M14.8 5.2l-9.6 9.6"/></svg><span class="sv" style="font-size:34px;font-weight:600;letter-spacing:-.02em;line-height:1.3">수치심을 주거나 공개적으로 망신 주는 방식</span></div><div class="a d7" style="display:flex;gap:20px;align-items:flex-start;padding:20px 0;border-top:1px solid var(--hair)">
+      <svg width="19" height="19" viewBox="0 0 20 20" fill="none" stroke="var(--red)" stroke-width="1.9" stroke-linecap="round" style="flex:none;margin-top:5px"><path d="M5.2 5.2l9.6 9.6M14.8 5.2l-9.6 9.6"/></svg><span class="sv" style="font-size:34px;font-weight:600;letter-spacing:-.02em;line-height:1.3">도구나 신체를 이용해 신체에 고통을 가하는 방법</span></div>
+  </div>
+  <div class="note f d8">생활지도는 법령 · 학칙 · 이 규정의 범위에서 <b>필요한 최소한도</b>로 실시합니다 (제77조④).
+    &nbsp;/&nbsp; 처벌 자체가 목적이 아니라 예방 · 회복 · 교육적 지원이 우선입니다 (제77조②).</div></div>
+  <div class="foot f d6"><span>교직원 연수 · 학생생활규정 전부개정</span><span>06 / 11</span></div></div>
+</x-dc>
+</body>
+</html>

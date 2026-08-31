@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;600;800&family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&display=swap">
+  <style>
+:root{
+  --paper:#FAF7F2; --paper2:#F1ECE2; --ink:#1C1A17; --ink2:#443E36;
+  --muted:#7B7367; --rule:#DBD4C7; --hair:#E8E2D7;
+  --red:#A0402C; --blue:#2C5183; --redwash:#F5E8E3; --bluewash:#E6EDF5;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:'IBM Plex Sans KR','맑은 고딕','Malgun Gothic',sans-serif;
+  font-weight:400;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:var(--red);text-decoration:none}
+a:hover{color:#7E3120}
+.slide{width:1280px;height:720px;background:var(--paper);position:relative;
+  padding:66px 76px 64px;display:flex;flex-direction:column;overflow:hidden}
+.sv{font-family:'Hahmlet','함초롬바탕','HCR Batang','Batang',serif;font-feature-settings:"palt" 1}
+
+/* 상단 진행 괘선 */
+.topbar{position:absolute;top:0;left:0;right:0;height:3px;background:var(--hair)}
+.tick{position:absolute;left:0;top:0;height:3px;transform-origin:left center}
+
+/* 머리 */
+.kicker{font-size:16px;font-weight:600;letter-spacing:.15em;color:var(--muted);margin:0 0 14px}
+.h1{font-family:'Hahmlet','함초롬바탕','HCR Batang','Batang',serif;
+  font-size:54px;font-weight:800;line-height:1.16;letter-spacing:-.025em;margin:0}
+.h1 em{font-style:normal;color:var(--red)}
+.h1 b{font-weight:800;color:var(--blue)}
+.rule{height:1px;background:var(--ink);opacity:.9;transform-origin:left center;margin:22px 0 0}
+.rule.red{background:var(--red)}
+.lead{font-size:20px;line-height:1.62;color:var(--ink2);margin:18px 0 0;max-width:900px}
+
+/* 본문 */
+.body{flex:1;display:flex;flex-direction:column;padding-top:26px;min-height:0}
+.cols{display:flex;gap:44px;flex:1;min-height:0}
+.col{flex:1;display:flex;flex-direction:column;gap:14px;min-width:0}
+.vhair{width:1px;background:var(--hair);align-self:stretch}
+.lab{font-size:14px;font-weight:600;letter-spacing:.13em;color:var(--muted)}
+.lab.red{color:var(--red)}
+.lab.blue{color:var(--blue)}
+.t22{font-size:22px;font-weight:600;line-height:1.5}
+.t20{font-size:20px;font-weight:500;line-height:1.55}
+.t18{font-size:18px;line-height:1.62;color:var(--ink2)}
+.t16{font-size:16px;line-height:1.62;color:var(--muted)}
+.art{font-size:14px;font-weight:600;letter-spacing:.04em;color:var(--muted);
+  font-variant-numeric:tabular-nums}
+
+/* 목록 */
+.rows{display:flex;flex-direction:column}
+.row{display:flex;gap:24px;align-items:flex-start;padding:16px 0;border-top:1px solid var(--hair)}
+.row:first-child{border-top:0}
+.num{font-family:'Hahmlet','함초롬바탕','Batang',serif;font-size:30px;font-weight:600;
+  color:var(--red);line-height:1;min-width:52px;font-variant-numeric:tabular-nums}
+.bul{display:flex;gap:11px;align-items:flex-start}
+.dot{width:5px;height:5px;border-radius:50%;background:var(--muted);margin-top:11px;flex:none}
+
+/* 블록 */
+.block{padding:18px 22px;background:var(--paper2)}
+.block.blue{background:var(--blue);color:var(--paper)}
+.block.blue .lab,.block.blue .t16{color:rgba(250,247,242,.72)}
+.block.red{background:var(--redwash)}
+.block.wash{background:var(--bluewash)}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:6px 13px;border:1px solid var(--red);
+  color:var(--red);font-size:14px;font-weight:600;letter-spacing:.05em}
+.tag{display:inline-block;padding:3px 9px;font-size:13px;font-weight:600;letter-spacing:.04em}
+.tag.blue{background:var(--blue);color:var(--paper)}
+.tag.ghost{border:1px solid var(--rule);color:var(--muted)}
+
+/* 격자 */
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px}
+.cell{padding:18px 20px 18px 0;border-top:1px solid var(--hair)}
+
+/* 바닥 */
+.foot{position:absolute;left:76px;right:76px;bottom:26px;display:flex;
+  justify-content:space-between;align-items:baseline;font-size:13px;color:var(--muted);
+  letter-spacing:.08em;font-variant-numeric:tabular-nums}
+.note{font-size:15px;line-height:1.6;color:var(--muted);border-top:1px solid var(--hair);
+  padding-top:13px;margin-top:auto}
+.note b{color:var(--red);font-weight:600}
+.band{margin-top:auto;padding:16px 22px;background:var(--red);color:var(--paper);
+  font-size:19px;font-weight:500;letter-spacing:-.01em}
+
+/* 표지 */
+.cover{padding:0 76px;justify-content:center}
+.cover .big{font-family:'Hahmlet','함초롬바탕','HCR Batang','Batang',serif;
+  font-size:104px;font-weight:800;line-height:1.06;letter-spacing:-.035em;margin:0}
+.cover .big em{font-style:normal;color:var(--red)}
+
+/* 등장 */
+@keyframes rise{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+@keyframes draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.a{animation:rise .58s cubic-bezier(.2,.72,.25,1) both}
+.f{animation:fade .7s ease both}
+.aline{animation:draw .72s cubic-bezier(.2,.72,.25,1) both}
+.d1{animation-delay:.06s}.d2{animation-delay:.16s}.d3{animation-delay:.26s}
+.d4{animation-delay:.36s}.d5{animation-delay:.46s}.d6{animation-delay:.56s}
+.d7{animation-delay:.66s}.d8{animation-delay:.76s}
+@media (prefers-reduced-motion:reduce){.a,.f,.aline{animation:none!important}}
+</style>
+</helmet>
+<div class="slide"><div class="topbar"><span class="tick f" style="background:var(--blue);width:64%"></span></div>
+  <p class="kicker a d1">제85조 &nbsp;·&nbsp; 제86조 &nbsp;·&nbsp; 신설</p>
+  <h1 class="h1 a d2">긴급할 때, 그리고 물건을 맡을 때</h1>
+  <div class="rule aline d3"></div>
+  
+  <div class="body"><div class="cols" style="gap:38px">
+    <div class="col a d4">
+      <div class="lab blue">제85조 &nbsp;방어 및 보호를 위한 제지</div>
+      <div class="rows">
+        <div class="row" style="padding:13px 0"><span class="lab" style="min-width:64px;margin-top:5px">언제</span>
+          <span class="t18">교육활동 중 자신 또는 타인의 <b style="color:var(--ink)">생명·신체에 위해</b>, 재산에 중대한 손해 우려가 있는 <b style="color:var(--red)">긴급한 경우에 한하여</b></span></div>
+        <div class="row" style="padding:13px 0"><span class="lab" style="min-width:64px;margin-top:5px">어떻게</span>
+          <span class="t18">피해 대상과 즉시 분리. 위험 제거·상황 종료까지 최소한도. 도구나 신체로 고통을 주는 방법은 금지</span></div>
+        <div class="row" style="padding:13px 0"><span class="lab" style="min-width:64px;margin-top:5px">다음</span>
+          <span class="t18">지체 없이 <b style="color:var(--ink)">학교장 보고</b> → 학교장이 보호자에게 신속 통지 (제85조⑤)</span></div>
+      </div>
+    </div>
+    <div class="vhair"></div>
+    <div class="col a d6">
+      <div class="lab blue">제86조 &nbsp;물품의 조사 및 분리보관</div>
+      <div class="t18">위해 물품 소지가 의심되는 <b style="color:var(--ink)">합리적 이유</b>가 있을 때, 필요한 범위에서 조사할 수 있습니다.</div>
+      <div class="t16" style="line-height:1.85">분리보관 대상 &nbsp;① 2회 이상 주의에도 계속 쓰는 수업방해 물품 &nbsp;② 안전·건강 위해 물품 &nbsp;③ 법령상 소지·사용 금지 물품 &nbsp;④ 스마트기기 제한 기준 해당 물품 &nbsp;⑤ 학칙상 금지물품</div>
+      <div class="block red">
+        <div class="lab red">반드시 학생에게 알리고 실시</div>
+        <div class="t20" style="margin-top:8px">사유 &nbsp;/&nbsp; 기간 &nbsp;/&nbsp; 장소 &nbsp;/&nbsp; 반환 방법</div>
+      </div>
+    </div>
+  </div>
+  <div class="note f d8">종전 <b>제25조(소지품 및 소지품 검사) ③④⑤항은 삭제</b>되고 제86조로 통합되었습니다.</div></div>
+  <div class="foot f d6"><span>교직원 연수 · 학생생활규정 전부개정</span><span>07 / 11</span></div></div>
+</x-dc>
+</body>
+</html>
