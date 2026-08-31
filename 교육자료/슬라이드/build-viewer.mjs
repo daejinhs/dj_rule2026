@@ -75,12 +75,7 @@ body{background:#4a4844;display:flex;align-items:center;justify-content:center;o
 /* 활성 슬라이드에서만 등장 효과가 다시 돈다 (animation-name 만 건드려 지연값은 보존) */
 .slidewrap:not(.is-active) .a,
 .slidewrap:not(.is-active) .f,
-.slidewrap:not(.is-active) .aline,
-.slidewrap:not(.is-active) .mv,
-.slidewrap:not(.is-active) .sweep,
-.slidewrap:not(.is-active) .pop,
-.slidewrap:not(.is-active) .pls,
-.slidewrap:not(.is-active) .arw{animation-name:none}
+.slidewrap:not(.is-active) .aline{animation-name:none}
 
 /* ── 하단 바 ── */
 #bar{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:20;
@@ -108,7 +103,7 @@ body{background:#4a4844;display:flex;align-items:center;justify-content:center;o
 .gcell:hover .gthumb{outline:2px solid #9C3B26}
 .gcap{margin-top:7px;font:500 12.5px/1.45 'IBM Plex Sans KR',system-ui,sans-serif;color:#CFC8BC}
 .gcap b{color:#8E877B;font-weight:600;margin-right:7px;font-variant-numeric:tabular-nums}
-.gthumb .a,.gthumb .f,.gthumb .aline,.gthumb .mv,.gthumb .sweep,.gthumb .pop,.gthumb .pls,.gthumb .arw{animation-name:none}
+.gthumb .a,.gthumb .f,.gthumb .aline{animation-name:none}
 
 /* ── 인쇄 (Ctrl+P → PDF로 저장). 웹폰트가 그대로 살아 있다 ── */
 @page{size:13.333in 7.5in;margin:0}
@@ -119,7 +114,7 @@ body{background:#4a4844;display:flex;align-items:center;justify-content:center;o
   .slidewrap{position:static;display:block!important;break-after:page;page-break-after:always}
   .slidewrap:last-child{break-after:auto;page-break-after:auto}
   .slidewrap .slide{position:relative;inset:auto;width:1280px;height:720px}
-  .slidewrap .a,.slidewrap .f,.slidewrap .aline,.slidewrap .mv,.slidewrap .sweep,.slidewrap .pop,.slidewrap .pls,.slidewrap .arw{animation-name:none}
+  .slidewrap .a,.slidewrap .f,.slidewrap .aline{animation-name:none}
 }
 </style>
 </head>
