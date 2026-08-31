@@ -25,6 +25,13 @@
   .tab-btn{background:none;border:none;color:rgba(255,255,255,.7);padding:13px 20px;cursor:pointer;font-size:.9rem;font-family:inherit;border-bottom:3px solid transparent;transition:.15s}
   .tab-btn:hover{color:#fff}
   .tab-btn.active{color:#fff;border-bottom-color:var(--accent);font-weight:700;background:rgba(0,0,0,.12)}
+  /* 탭이 아니라 다른 문서로 나가는 링크 */
+  .tab-link{margin-left:auto;display:inline-flex;align-items:center;gap:7px;text-decoration:none;
+    color:var(--accent);padding:13px 20px;font-size:.9rem;font-weight:500;font-family:inherit;
+    border-bottom:3px solid transparent;transition:.15s;white-space:nowrap}
+  .tab-link:hover{color:#fff;background:rgba(0,0,0,.12);border-bottom-color:var(--accent)}
+  .tab-link .ext{font-size:.8em;opacity:.8}
+  @media(max-width:760px){.tab-link{margin-left:0}}
   /* LAYOUT */
   .container{max-width:920px;margin:0 auto;padding:24px}
   .layout{max-width:1200px;margin:0 auto;padding:24px;display:grid;grid-template-columns:250px 1fr;gap:26px;align-items:start}
@@ -152,6 +159,7 @@
     <button class="tab-btn" data-tab="full">📖 2026 개정안 전문</button>
     <button class="tab-btn" data-tab="files">📎 원문 자료(PDF)</button>
     <button class="tab-btn" data-tab="opinion">✍️ 의견 제시</button>
+    <a class="tab-link" href="slides/" target="_blank" rel="noopener">🎓 교육 슬라이드 <span class="ext">↗</span></a>
   </div></nav>
 </header>
 
