@@ -1,0 +1,749 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>학생생활규정 개정 교육 — 대진고등학교</title>
+<meta name="description" content="2026. 9. 1. 시행 학생생활규정 전부개정 교육자료. 교직원 연수 11장, 학생 교육 8장.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@400;600;800&amp;family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&amp;display=swap">
+<style>
+
+:root{
+  --paper:#FAF7F2; --paper2:#F1ECE2; --ink:#1C1A17; --ink2:#443E36;
+  --muted:#7B7367; --rule:#DBD4C7; --hair:#E8E2D7;
+  --red:#A0402C; --blue:#2C5183; --redwash:#F5E8E3; --bluewash:#E6EDF5;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:'IBM Plex Sans KR','맑은 고딕','Malgun Gothic',sans-serif;
+  font-weight:400;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:var(--red);text-decoration:none}
+a:hover{color:#7E3120}
+.slide{width:1280px;height:720px;background:var(--paper);position:relative;
+  padding:66px 76px 64px;display:flex;flex-direction:column;overflow:hidden}
+.sv{font-family:'Hahmlet','함초롬바탕','HCR Batang','Batang',serif;font-feature-settings:"palt" 1}
+
+/* 상단 진행 괘선 */
+.topbar{position:absolute;top:0;left:0;right:0;height:3px;background:var(--hair)}
+.tick{position:absolute;left:0;top:0;height:3px;transform-origin:left center}
+
+/* 머리 */
+.kicker{font-size:16px;font-weight:600;letter-spacing:.15em;color:var(--muted);margin:0 0 14px}
+.h1{font-family:'Hahmlet','함초롬바탕','HCR Batang','Batang',serif;
+  font-size:54px;font-weight:800;line-height:1.16;letter-spacing:-.025em;margin:0}
+.h1 em{font-style:normal;color:var(--red)}
+.h1 b{font-weight:800;color:var(--blue)}
+.rule{height:1px;background:var(--ink);opacity:.9;transform-origin:left center;margin:22px 0 0}
+.rule.red{background:var(--red)}
+.lead{font-size:20px;line-height:1.62;color:var(--ink2);margin:18px 0 0;max-width:900px}
+
+/* 본문 */
+.body{flex:1;display:flex;flex-direction:column;padding-top:26px;min-height:0}
+.cols{display:flex;gap:44px;flex:1;min-height:0}
+.col{flex:1;display:flex;flex-direction:column;gap:14px;min-width:0}
+.vhair{width:1px;background:var(--hair);align-self:stretch}
+.lab{font-size:14px;font-weight:600;letter-spacing:.13em;color:var(--muted)}
+.lab.red{color:var(--red)}
+.lab.blue{color:var(--blue)}
+.t22{font-size:22px;font-weight:600;line-height:1.5}
+.t20{font-size:20px;font-weight:500;line-height:1.55}
+.t18{font-size:18px;line-height:1.62;color:var(--ink2)}
+.t16{font-size:16px;line-height:1.62;color:var(--muted)}
+.art{font-size:14px;font-weight:600;letter-spacing:.04em;color:var(--muted);
+  font-variant-numeric:tabular-nums}
+
+/* 목록 */
+.rows{display:flex;flex-direction:column}
+.row{display:flex;gap:24px;align-items:flex-start;padding:16px 0;border-top:1px solid var(--hair)}
+.row:first-child{border-top:0}
+.num{font-family:'Hahmlet','함초롬바탕','Batang',serif;font-size:30px;font-weight:600;
+  color:var(--red);line-height:1;min-width:52px;font-variant-numeric:tabular-nums}
+.bul{display:flex;gap:11px;align-items:flex-start}
+.dot{width:5px;height:5px;border-radius:50%;background:var(--muted);margin-top:11px;flex:none}
+
+/* 블록 */
+.block{padding:18px 22px;background:var(--paper2)}
+.block.blue{background:var(--blue);color:var(--paper)}
+.block.blue .lab,.block.blue .t16{color:rgba(250,247,242,.72)}
+.block.red{background:var(--redwash)}
+.block.wash{background:var(--bluewash)}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:6px 13px;border:1px solid var(--red);
+  color:var(--red);font-size:14px;font-weight:600;letter-spacing:.05em}
+.tag{display:inline-block;padding:3px 9px;font-size:13px;font-weight:600;letter-spacing:.04em}
+.tag.blue{background:var(--blue);color:var(--paper)}
+.tag.ghost{border:1px solid var(--rule);color:var(--muted)}
+
+/* 격자 */
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px}
+.cell{padding:18px 20px 18px 0;border-top:1px solid var(--hair)}
+
+/* 바닥 */
+.foot{position:absolute;left:76px;right:76px;bottom:26px;display:flex;
+  justify-content:space-between;align-items:baseline;font-size:13px;color:var(--muted);
+  letter-spacing:.08em;font-variant-numeric:tabular-nums}
+.note{font-size:15px;line-height:1.6;color:var(--muted);border-top:1px solid var(--hair);
+  padding-top:13px;margin-top:auto}
+.note b{color:var(--red);font-weight:600}
+.band{margin-top:auto;padding:16px 22px;background:var(--red);color:var(--paper);
+  font-size:19px;font-weight:500;letter-spacing:-.01em}
+
+/* 표지 */
+.cover{padding:0 76px;justify-content:center}
+.cover .big{font-family:'Hahmlet','함초롬바탕','HCR Batang','Batang',serif;
+  font-size:104px;font-weight:800;line-height:1.06;letter-spacing:-.035em;margin:0}
+.cover .big em{font-style:normal;color:var(--red)}
+
+/* 등장 */
+@keyframes rise{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+@keyframes draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.a{animation:rise .58s cubic-bezier(.2,.72,.25,1) both}
+.f{animation:fade .7s ease both}
+.aline{animation:draw .72s cubic-bezier(.2,.72,.25,1) both}
+.d1{animation-delay:.06s}.d2{animation-delay:.16s}.d3{animation-delay:.26s}
+.d4{animation-delay:.36s}.d5{animation-delay:.46s}.d6{animation-delay:.56s}
+.d7{animation-delay:.66s}.d8{animation-delay:.76s}
+@media (prefers-reduced-motion:reduce){.a,.f,.aline{animation:none!important}}
+
+
+/* ── 뷰어 ── */
+html,body{height:100%}
+body{background:#5c5852;display:flex;align-items:center;justify-content:center;overflow:hidden}
+#stage{position:relative;width:1280px;height:720px;transform-origin:center center;
+  box-shadow:0 18px 60px rgba(0,0,0,.34)}
+.slidewrap{position:absolute;inset:0;display:none}
+.slidewrap.is-active{display:block}
+.slidewrap .slide{position:absolute;inset:0}
+
+/* 활성 슬라이드에서만 등장 효과가 다시 돈다 (animation-name 만 건드려 지연값은 보존) */
+.slidewrap:not(.is-active) .a,
+.slidewrap:not(.is-active) .f,
+.slidewrap:not(.is-active) .aline{animation-name:none}
+
+/* ── 하단 바 ── */
+#bar{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:20;
+  display:flex;align-items:center;gap:6px;padding:7px 9px;border-radius:2px;
+  background:rgba(28,26,23,.9);color:#EDE8DF;font:500 13px/1 'IBM Plex Sans KR',system-ui,sans-serif;
+  transition:opacity .3s;letter-spacing:.02em}
+#bar.hide{opacity:0;pointer-events:none}
+#bar button{font:inherit;color:inherit;background:transparent;border:0;padding:7px 11px;
+  cursor:pointer;border-radius:2px;letter-spacing:.02em}
+#bar button:hover{background:rgba(255,255,255,.14)}
+#bar button[aria-pressed="true"]{background:#A0402C;color:#fff}
+#count{padding:0 12px;font-variant-numeric:tabular-nums;opacity:.72;white-space:nowrap}
+#bar .sep{width:1px;height:20px;background:rgba(255,255,255,.2);margin:0 3px}
+
+/* ── 전체보기 ── */
+#grid{position:fixed;inset:0;z-index:30;background:#413e39;overflow:auto;padding:34px 30px 90px;display:none}
+#grid.on{display:block}
+#grid h2{font:600 14px/1 'IBM Plex Sans KR',system-ui,sans-serif;letter-spacing:.14em;
+  color:#B9B2A6;margin:0 0 16px}
+#grid h2:not(:first-child){margin-top:34px}
+.gwrap{display:grid;grid-template-columns:repeat(auto-fill,minmax(268px,1fr));gap:26px 20px}
+.gcell{cursor:pointer;border:0;background:none;padding:0;text-align:left;font:inherit}
+.gthumb{width:100%;aspect-ratio:16/9;overflow:hidden;position:relative;outline:1px solid rgba(255,255,255,.16)}
+.gthumb > .slide{position:absolute;top:0;left:0;transform:scale(.209);transform-origin:top left}
+.gcell:hover .gthumb{outline:2px solid #A0402C}
+.gcap{margin-top:7px;font:500 12.5px/1.45 'IBM Plex Sans KR',system-ui,sans-serif;color:#CFC8BC}
+.gcap b{color:#8E877B;font-weight:600;margin-right:7px;font-variant-numeric:tabular-nums}
+.gthumb .a,.gthumb .f,.gthumb .aline{animation-name:none}
+
+/* ── 인쇄 (Ctrl+P → PDF로 저장). 웹폰트가 그대로 살아 있다 ── */
+@page{size:13.333in 7.5in;margin:0}
+@media print{
+  html,body{height:auto;background:#fff;display:block;overflow:visible}
+  #bar,#grid{display:none!important}
+  #stage{position:static;width:auto;height:auto;transform:none!important;box-shadow:none}
+  .slidewrap{position:static;display:block!important;break-after:page;page-break-after:always}
+  .slidewrap:last-child{break-after:auto;page-break-after:auto}
+  .slidewrap .slide{position:relative;inset:auto;width:1280px;height:720px}
+  .slidewrap .a,.slidewrap .f,.slidewrap .aline{animation-name:none}
+}
+</style>
+</head>
+<body>
+<div id="stage">
+<div class="slidewrap" data-i="0" data-deck="staff" data-title="학생생활규정 전부개정"><div class="slide cover"><div class="topbar"><span class="tick f" style="background:var(--red);width:9%"></span></div>
+  <p class="kicker a d1" style="margin-bottom:26px">대진고등학교 &nbsp;·&nbsp; 교직원 연수</p>
+  <h1 class="big a d2">학생생활규정<br><em>전부개정</em></h1>
+  <div class="rule aline d4" style="margin:34px 0 0;width:560px"></div>
+  <div class="a d5" style="display:flex;gap:56px;margin-top:26px">
+    <div><div class="lab">시행</div><div class="t22" style="margin-top:6px">2026. 9. 1.</div></div>
+    
+    <div></div>
+  </div>
+  <div class="foot f d6"><span>교직원 연수 · 학생생활규정 전부개정</span><span>01 / 11</span></div><p class="t16 a d6" style="margin-top: 40px; width: 345px; height: 59px">학생안전생활부 &nbsp;·&nbsp; 2026. 8. 31.<br><span style="color: #000000">PLUS(+) &amp; 4C 교육으로 모두가 행복한 학교</span>
+  </p></div></div>
+<div class="slidewrap" data-i="1" data-deck="staff" data-title="상위 법령 개정에 따른 본교 생활규정 개정"><div class="slide"><div class="topbar"><span class="tick f" style="background:var(--ink);width:18%"></span></div>
+  <p class="kicker a d1">오늘 연수</p>
+  <h1 class="h1 a d2">상위 법령 개정에 따른 본교 생활규정 개정</h1>
+  <div class="rule aline d3"></div>
+  <p class="lead a d4">우리 학교 뿐만 아니라 전국의 모든 학교에서 개정작업이 진행되었습니다.</p>
+  <div class="body"><div class="rows" style="flex:1">
+    <div class="row a d4"><div class="num">01</div><div>
+      <div class="t22">생활지도 방법 8가지</div>
+      <div class="t18" style="margin-top:5px">조언·상담·주의·훈육·훈계·보상·제지·물품 분리보관. 법령상 이름이 붙었습니다.</div></div></div>
+    <div class="row a d5"><div class="num">02</div><div>
+      <div class="t22">개별학생교육지원 절차</div>
+      <div class="t18" style="margin-top:5px">요건 → 설명 → 실시 → 보고 → 복귀. 9월 1일부터 실제로 쓰는 절차입니다.</div></div></div>
+    <div class="row a d6"><div class="num">03</div><div>
+      <div class="t22">스마트기기 수거와 단계 지도</div>
+      <div class="t18" style="margin-top:5px">우리 학교가 걷는 건 <b style="color:var(--red)">휴대폰만</b>입니다.</div></div></div>
+  </div>
+  </div>
+  <div class="foot f d6"><span>교직원 연수 · 학생생활규정 전부개정</span><span>02 / 11</span></div></div></div>
+<div class="slidewrap" data-i="2" data-deck="staff" data-title="규정 11권이 1권이 됐습니다"><div class="slide"><div class="topbar"><span class="tick f" style="background:var(--ink);width:27%"></span></div>
+  <p class="kicker a d1">구조</p>
+  <h1 class="h1 a d2">규정 <em>11권</em>이 <b>1권</b>이 됐습니다</h1>
+  <div class="rule aline d3"></div>
+  
+  <div class="body"><div class="cols" style="gap:30px;align-items:stretch">
+    <div class="col" style="flex:0 0 400px">
+      <div class="lab a d4">전 &nbsp;·&nbsp; 2022 &nbsp;—&nbsp; 11개 독립 규정</div>
+      <div class="a d4" style="display:flex;flex-direction:column;gap:0;margin-top:2px">
+        <div style="display:flex;gap:12px;padding:7px 0;border-top:1px solid var(--hair);font-size:17px">
+          <span class="art" style="min-width:16px">1</span><span>학생생활규정 제정·개정 절차</span></div><div style="display:flex;gap:12px;padding:7px 0;border-top:1px solid var(--hair);font-size:17px">
+          <span class="art" style="min-width:16px">2</span><span>학생회 운영 규정</span></div><div style="display:flex;gap:12px;padding:7px 0;border-top:1px solid var(--hair);font-size:17px">
+          <span class="art" style="min-width:16px">3</span><span>학생 선도 규정</span></div><div style="display:flex;gap:12px;padding:7px 0;border-top:1px solid var(--hair);font-size:17px">
+          <span class="art" style="min-width:16px">4</span><span>교내·외 생활 규정</span></div><div style="display:flex;gap:12px;padding:7px 0;border-top:1px solid var(--hair);font-size:17px">
+          <span class="art" style="min-width:16px">5</span><span>복장 및 용의 규정</span></div><div style="display:flex;gap:12px;padding:7px 0;border-top:1px solid var(--hair);font-size:17px">
+          <span class="art" style="min-width:16px">6</span><span>학생 생활 평점제 규정</span></div><div style="display:flex;gap:12px;padding:7px 0;border-top:1px solid var(--hair);font-size:17px">
+          <span class="art" style="min-width:16px">7</span><span>생활지도위원회 규정</span></div>
+        <div style="display:flex;gap:12px;padding:7px 0;border-top:1px solid var(--hair);font-size:17px;color:var(--muted)">
+          <span class="art" style="min-width:36px">8–11</span>
+          <span>영상정보처리기기 · 현장체험학습 · 안전영향평가단 · 학교장추천전형</span></div>
+      </div>
+      <div class="t16 a d5" style="margin-top:4px">↳ 8–11번은 <b style="color: var(--ink2)">통합하지 않고 별도 규정으로 유지</b>합니다</div>
+    </div>
+    <div class="a d5" style="align-self:center;padding:0 4px"><svg width="30" height="12" viewBox="0 0 30 12" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M0 6h27M21.5 1.2L26.8 6l-5.3 4.8"></path></svg></div>
+    <div class="col" style="flex:1">
+      <div class="lab a d5">후 &nbsp;·&nbsp; 2026 &nbsp;—&nbsp; 학생생활규정 한 권 &nbsp;·&nbsp; 4편 9장 116조</div>
+      <div class="a d6" style="display:flex;flex-direction:column;gap:8px">
+        <div class="block" style="display:flex;justify-content:space-between;align-items:baseline;gap:16px">
+          <span class="t20">제1편 &nbsp;총칙</span>
+          <span class="t16">제1~15조 &nbsp;·&nbsp; 옮겨 담음 + 제1~5조 신설</span></div>
+        <div class="block" style="display:flex;justify-content:space-between;align-items:baseline;gap:16px">
+          <span class="t20">제2편 &nbsp;학생의 학교생활</span>
+          <span class="t16">제16~73조 &nbsp;·&nbsp; 그대로 + 제31조 신설</span></div>
+        <div class="block blue" style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:22px">
+          <span class="t20" style="font-weight:600">제3편 &nbsp;생활지도와 교육지원</span>
+          <span class="t16" style="color:rgba(250,247,242,.85)">제74~100조 &nbsp;·&nbsp; <b>제74~95조 전부 신설</b></span></div>
+        <div class="block" style="display:flex;justify-content:space-between;align-items:baseline;gap:16px">
+          <span class="t20">제4편 &nbsp;징계</span>
+          <span class="t16">제101~116조 &nbsp;·&nbsp; 그대로</span></div>
+      </div>
+      <div class="t18 a d7" style="margin-top:4px">복장·용의, 상벌점, 징계 기준은 <b style="color: var(--ink)">내용이 그대로</b>입니다.
+<br>&nbsp;새로 생긴 건 <b style="color: var(--blue)">제3편 제6·7장</b> 입니다.</div>
+    </div>
+  </div>
+  <div class="note f d8" style="width: 1131px; height: 57px"><br></div></div>
+  <div class="foot f d6"><span>교직원 연수 · 학생생활규정 전부개정</span><span>03 / 11</span></div></div></div>
+<div class="slidewrap" data-i="3" data-deck="staff" data-title="용어 최신화"><div class="slide"><div class="topbar"><span class="tick f" style="background:var(--ink);width:36%"></span></div>
+  <p class="kicker a d1">용어</p>
+  <h1 class="h1 a d2">용어 최신화</h1>
+  <div class="rule aline d3"></div>
+  <p class="lead a d4">'선도'는 벌 주는 말이고 '생활교육'은 가르치는 말입니다. '분리'는 빼는 말이고 '교육지원'은 돕는 말입니다.</p><div class="body"><div class="rows">
+    <div class="row a d4" style="align-items:center;padding:15px 0">
+      <span class="t22" style="color:var(--muted);min-width:260px;font-weight:400">학생선도위원회</span>
+      <svg width="30" height="12" viewBox="0 0 30 12" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M0 6h27M21.5 1.2L26.8 6l-5.3 4.8"></path></svg>
+      <span class="sv" style="font-size:33px;font-weight:700;letter-spacing:-.02em;flex:1">학생생활교육위원회</span>
+      <span class="art">제103조</span></div><div class="row a d5" style="align-items:center;padding:15px 0">
+      <span class="t22" style="color:var(--muted);min-width:260px;font-weight:400">분리지도</span>
+      <svg width="30" height="12" viewBox="0 0 30 12" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M0 6h27M21.5 1.2L26.8 6l-5.3 4.8"></path></svg>
+      <span class="sv" style="font-size:33px;font-weight:700;letter-spacing:-.02em;flex:1">개별학생교육지원</span>
+      <span class="art">제89조</span></div><div class="row a d6" style="align-items:center;padding:15px 0">
+      <span class="t22" style="color:var(--muted);min-width:260px;font-weight:400">통신기기</span>
+      <svg width="30" height="12" viewBox="0 0 30 12" fill="none" stroke="var(--red)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M0 6h27M21.5 1.2L26.8 6l-5.3 4.8"></path></svg>
+      <span class="sv" style="font-size:33px;font-weight:700;letter-spacing:-.02em;flex:1">스마트기기</span>
+      <span class="art">제30·31조</span></div>
+  </div>
+  <div class="grid4 a d7" style="margin-top:16px">
+    <div class="cell" style="padding-right:22px">
+      
+      
+      </div><div class="cell" style="padding-right:22px">
+      
+      
+      </div><div class="cell" style="padding-right:22px">
+      
+      
+      </div>
+  </div>
+  </div>
+  
+  <div class="foot f d6"><span>교직원 연수 · 학생생활규정 전부개정</span><span>04 / 11</span></div></div></div>
+<div class="slidewrap" data-i="4" data-deck="staff" data-title="선생님이 할 수 있는 지도, 여덟 가지"><div class="slide"><div class="topbar"><span class="tick f" style="background:var(--blue);width:45%"></span></div>
+  <p class="kicker a d1">제3편 제6장 &nbsp;·&nbsp; 제74~88조 신설</p>
+  <h1 class="h1 a d2">선생님이 할 수 있는 지도, <b>여덟 가지</b></h1>
+  <div class="rule aline d3"></div>
+  <p class="lead a d4">교원의 학생생활지도에 관한 고시」(교육부고시 제2026-3호) 개정 반영</p>
+  <div class="body"><div class="grid4" style="gap:0 34px;margin-top:0">
+    <div class="cell a d4">
+      <div class="art" style="color:var(--blue)">제79조</div>
+      <div class="t22" style="margin-top:5px">조언</div>
+      <div class="t16" style="margin-top:6px">문제를 인식했거나 도움을 요청할 때. <br>사생활 조언은 비공개 원칙<br>필요한 경우, 전문가 검사, 상담 또는 치료를 권고</div></div><div class="cell a d4">
+      <div class="art" style="color:var(--blue)">제80조</div>
+      <div class="t22" style="margin-top:5px">상담</div>
+      <div class="t16" style="margin-top:6px">수업시간 외 원칙. 폭언·협박·폭행 시 중단할 수 있습니다</div></div><div class="cell a d4">
+      <div class="art" style="color:var(--blue)">제81조</div>
+      <div class="t22" style="margin-top:5px">주의</div>
+      <div class="t16" style="margin-top:6px">스스로 행동을 조정할 수 있도록 사유와 개선 방향을 함께 제시하는 방식으로</div></div><div class="cell a d4">
+      <div class="art" style="color:var(--blue)">제82조</div>
+      <div class="t22" style="margin-top:5px">훈육</div>
+      <div class="t16" style="margin-top:6px">조언과 주의만으로 행동중재가 어려운 경우<br>과업 부여 · 지시 · 말로 제지. 공개 망신 금지</div></div><div class="cell a d5">
+      <div class="art" style="color:var(--blue)">제83조</div>
+      <div class="t22" style="margin-top:5px">훈계</div>
+      <div class="t16" style="margin-top:6px">대안행동 · 성찰 글쓰기 · 훼손된 시설 원상회복, 공동체 기여활동 가능</div></div><div class="cell a d5">
+      <div class="art" style="color:var(--blue)">제84조</div>
+      <div class="t22" style="margin-top:5px">보상</div>
+      <div class="t16" style="margin-top:6px">칭찬 · 상 · 격려 · 역할 부여 · 회복적 참여 기회</div></div><div class="cell a d5">
+      <div class="art" style="color:var(--blue)">제85조</div>
+      <div class="t22" style="margin-top:5px">방어 및 보호를 위한 제지</div>
+      <div class="t16" style="margin-top:6px">긴급한 경우에 한하여. 실시하면 학교장 보고</div></div><div class="cell a d5">
+      <div class="art" style="color:var(--blue)">제86조</div>
+      <div class="t22" style="margin-top:5px">물품 조사·분리보관</div>
+      <div class="t16" style="margin-top:6px">사유·기간·장소·반환 방법을 알리고 실시</div></div>
+  </div>
+  <div class="note f d8">순서는 <b>조언 · 주의 → 훈육 → 훈계</b>입니다.&nbsp;</div></div>
+  <div class="foot f d6"><span>교직원 연수 · 학생생활규정 전부개정</span><span>05 / 11</span></div></div></div>
+<div class="slidewrap" data-i="5" data-deck="staff" data-title="넘으면 안 되는 선"><div class="slide"><div class="topbar"><span class="tick f" style="background:var(--red);width:55%"></span></div>
+  <p class="kicker a d1">제77조③ &nbsp;·&nbsp; 제82조④ &nbsp;·&nbsp; 제85조③</p>
+  <h1 class="h1 a d2"><em>넘으면 안 되는 선</em></h1>
+  <div class="rule aline d3"></div>
+  
+  <div class="body"><div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:0">
+    <div class="a d4" style="display:flex;gap:20px;align-items:flex-start;padding:20px 0;border-top:1px solid var(--hair)">
+      <svg width="19" height="19" viewBox="0 0 20 20" fill="none" stroke="var(--red)" stroke-width="1.9" stroke-linecap="round" style="flex:none;margin-top:5px"><path d="M5.2 5.2l9.6 9.6M14.8 5.2l-9.6 9.6"/></svg><span class="sv" style="font-size:34px;font-weight:600;letter-spacing:-.02em;line-height:1.3">체벌</span></div><div class="a d5" style="display:flex;gap:20px;align-items:flex-start;padding:20px 0;border-top:1px solid var(--hair)">
+      <svg width="19" height="19" viewBox="0 0 20 20" fill="none" stroke="var(--red)" stroke-width="1.9" stroke-linecap="round" style="flex:none;margin-top:5px"><path d="M5.2 5.2l9.6 9.6M14.8 5.2l-9.6 9.6"/></svg><span class="sv" style="font-size:34px;font-weight:600;letter-spacing:-.02em;line-height:1.3">모욕 · 조롱 등 학생의 인권을 침해하는 방식</span></div><div class="a d6" style="display:flex;gap:20px;align-items:flex-start;padding:20px 0;border-top:1px solid var(--hair)">
+      <svg width="19" height="19" viewBox="0 0 20 20" fill="none" stroke="var(--red)" stroke-width="1.9" stroke-linecap="round" style="flex:none;margin-top:5px"><path d="M5.2 5.2l9.6 9.6M14.8 5.2l-9.6 9.6"/></svg><span class="sv" style="font-size:34px;font-weight:600;letter-spacing:-.02em;line-height:1.3">수치심을 주거나 공개적으로 망신 주는 방식</span></div><div class="a d7" style="display:flex;gap:20px;align-items:flex-start;padding:20px 0;border-top:1px solid var(--hair)">
+      <svg width="19" height="19" viewBox="0 0 20 20" fill="none" stroke="var(--red)" stroke-width="1.9" stroke-linecap="round" style="flex:none;margin-top:5px"><path d="M5.2 5.2l9.6 9.6M14.8 5.2l-9.6 9.6"/></svg><span class="sv" style="font-size:34px;font-weight:600;letter-spacing:-.02em;line-height:1.3">도구나 신체를 이용해 신체에 고통을 가하는 방법</span></div>
+  </div>
+  <div class="note f d8">생활지도는 법령 · 학칙 · 이 규정의 범위에서 <b>필요한 최소한도</b>로 실시합니다 (제77조④).
+    &nbsp;/&nbsp; 처벌 자체가 목적이 아니라 예방 · 회복 · 교육적 지원이 우선입니다 (제77조②).</div></div>
+  <div class="foot f d6"><span>교직원 연수 · 학생생활규정 전부개정</span><span>06 / 11</span></div></div></div>
+<div class="slidewrap" data-i="6" data-deck="staff" data-title="긴급할 때, 그리고 물건을 맡을 때"><div class="slide"><div class="topbar"><span class="tick f" style="background:var(--blue);width:64%"></span></div>
+  <p class="kicker a d1">제85조 &nbsp;·&nbsp; 제86조 &nbsp;·&nbsp; 신설</p>
+  <h1 class="h1 a d2">긴급할 때, 그리고 물건을 맡을 때</h1>
+  <div class="rule aline d3"></div>
+  
+  <div class="body"><div class="cols" style="gap:38px">
+    <div class="col a d4">
+      <div class="lab blue">제85조 &nbsp;방어 및 보호를 위한 제지</div>
+      <div class="rows">
+        <div class="row" style="padding:13px 0"><span class="lab" style="min-width:64px;margin-top:5px">언제</span>
+          <span class="t18">교육활동 중 자신 또는 타인의 <b style="color:var(--ink)">생명·신체에 위해</b>, 재산에 중대한 손해 우려가 있는 <b style="color:var(--red)">긴급한 경우에 한하여</b></span></div>
+        <div class="row" style="padding:13px 0"><span class="lab" style="min-width:64px;margin-top:5px">어떻게</span>
+          <span class="t18">피해 대상과 즉시 분리. 위험 제거·상황 종료까지 최소한도. 도구나 신체로 고통을 주는 방법은 금지</span></div>
+        <div class="row" style="padding:13px 0"><span class="lab" style="min-width:64px;margin-top:5px">다음</span>
+          <span class="t18">지체 없이 <b style="color:var(--ink)">학교장 보고</b> → 학교장이 보호자에게 신속 통지 (제85조⑤)</span></div>
+      </div>
+    </div>
+    <div class="vhair"></div>
+    <div class="col a d6">
+      <div class="lab blue">제86조 &nbsp;물품의 조사 및 분리보관</div>
+      <div class="t18">위해 물품 소지가 의심되는 <b style="color:var(--ink)">합리적 이유</b>가 있을 때, 필요한 범위에서 조사할 수 있습니다.</div>
+      <div class="t16" style="line-height:1.85">분리보관 대상 &nbsp;① 2회 이상 주의에도 계속 쓰는 수업방해 물품 &nbsp;② 안전·건강 위해 물품 &nbsp;③ 법령상 소지·사용 금지 물품 &nbsp;④ 스마트기기 제한 기준 해당 물품 &nbsp;⑤ 학칙상 금지물품</div>
+      <div class="block red">
+        <div class="lab red">반드시 학생에게 알리고 실시</div>
+        <div class="t20" style="margin-top:8px">사유 &nbsp;/&nbsp; 기간 &nbsp;/&nbsp; 장소 &nbsp;/&nbsp; 반환 방법</div>
+      </div>
+    </div>
+  </div>
+  <div class="note f d8">종전 <b>제25조(소지품 및 소지품 검사) ③④⑤항은 삭제</b>되고 제86조로 통합되었습니다.</div></div>
+  <div class="foot f d6"><span>교직원 연수 · 학생생활규정 전부개정</span><span>07 / 11</span></div></div></div>
+<div class="slidewrap" data-i="7" data-deck="staff" data-title="지도를 했으면 한 줄 남깁니다"><div class="slide"><div class="topbar"><span class="tick f" style="background:var(--ink);width:73%"></span></div>
+  <p class="kicker a d1">제87조</p>
+  <h1 class="h1 a d2">지도를 했으면 한 줄 남깁니다</h1>
+  <div class="rule aline d3"></div>
+  
+  <div class="body"><div class="cols" style="gap:38px">
+    <div class="col a d4" style="flex:0 0 660px">
+      <div class="lab">기록 대상 &nbsp;세 가지</div>
+      <div style="display:flex;flex-direction:column;gap:9px">
+        <div class="block" style="padding:13px 18px"><span class="t20">방어 및 보호를 위한 제지</span></div><div class="block" style="padding:13px 18px"><span class="t20">개별학생교육지원 실시</span></div><div class="block" style="padding:13px 18px"><span class="t20">물품 조사 · 분리보관</span></div>
+      </div>
+      <div class="t16">그 밖에 학교장이 기록이 필요하다고 인정하는 경우 포함</div>
+      <div style="margin-top:6px"><div class="lab">기록 항목</div>
+        <div class="t18" style="margin-top:7px;color:var(--ink)">일시 · 장소 · 사유 · 경위 · 방법 · 조치 결과 · 보호자 통지 여부</div></div>
+    </div>
+  </div>
+  <div class="note f d8">양식은 학생안전생활부에서 드립니다. <b>기록이 선생님을 보호합니다.</b></div></div>
+  <div class="foot f d6"><span>교직원 연수 · 학생생활규정 전부개정</span><span>08 / 11</span></div></div></div>
+<div class="slidewrap" data-i="8" data-deck="staff" data-title="개별학생교육지원, 순서대로"><div class="slide"><div class="topbar"><span class="tick f" style="background:var(--blue);width:82%"></span></div>
+  <p class="kicker a d1">제7장 &nbsp;제89~92조 &nbsp;·&nbsp; 신설</p>
+  <h1 class="h1 a d2">개별학생교육지원, 순서대로</h1>
+  <div class="rule aline d3"></div>
+  
+  <div class="body"><div class="block wash a d4" style="display:flex;gap:22px;align-items:center;padding:11px 22px">
+    <span class="lab blue" style="min-width:76px">실시 요건</span>
+    <span class="t18" style="color:var(--ink)">수업 중 <b>2회 이상 주의</b>했는데 방해를 반복·지속 &nbsp;·&nbsp; 또는 <b>고성·폭언 등 소란</b>으로 교육활동을 심각하게 방해
+      &nbsp;+&nbsp; 다른 학생 학습권 보호가 필요할 것</span></div>
+  <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 32px;margin-top:4px">
+    <div class="cell a d5" style="padding:11px 0">
+      <div style="display:flex;gap:11px;align-items:baseline">
+        <span class="num" style="font-size:23px;min-width:20px;color:var(--blue)">1</span>
+        <span class="t20">설명과 협조 요청</span></div>
+      <div class="t16" style="margin-top:5px;padding-left:31px">사유와 필요성을 학생에게 설명하고, 가능하면 자발적 협조를 먼저 요청</div></div><div class="cell a d5" style="padding:11px 0">
+      <div style="display:flex;gap:11px;align-items:baseline">
+        <span class="num" style="font-size:23px;min-width:20px;color:var(--blue)">2</span>
+        <span class="t20">별도 공간에서 실시</span></div>
+      <div class="t16" style="margin-top:5px;padding-left:31px">교실 내 지정 공간 / 교실 외 교내 공간 / 실외수업 시 분리된 공간</div></div><div class="cell a d5" style="padding:11px 0">
+      <div style="display:flex;gap:11px;align-items:baseline">
+        <span class="num" style="font-size:23px;min-width:20px;color:var(--blue)">3</span>
+        <span class="t20">학교장 보고</span></div>
+      <div class="t16" style="margin-top:5px;padding-left:31px">일시 · 경위 · 실시 장소 · 지원 내용</div></div><div class="cell a d6" style="padding:11px 0">
+      <div style="display:flex;gap:11px;align-items:baseline">
+        <span class="num" style="font-size:23px;min-width:20px;color:var(--blue)">4</span>
+        <span class="t20">보호자 통지</span></div>
+      <div class="t16" style="margin-top:5px;padding-left:31px">학교장이 알리고, 필요 시 인계 · 상담 · 가정연계 협의</div></div><div class="cell a d6" style="padding:11px 0">
+      <div style="display:flex;gap:11px;align-items:baseline">
+        <span class="num" style="font-size:23px;min-width:20px;color:var(--blue)">5</span>
+        <span class="t20">거부 · 반복되면</span></div>
+      <div class="t16" style="margin-top:5px;padding-left:31px">보호자 인계 요청 → 가정학습 (출석 인정, 학교장이 상황 점검)</div></div><div class="cell a d6" style="padding:11px 0">
+      <div style="display:flex;gap:11px;align-items:baseline">
+        <span class="num" style="font-size:23px;min-width:20px;color:var(--blue)">6</span>
+        <span class="t20">그래도 반복되면</span></div>
+      <div class="t16" style="margin-top:5px;padding-left:31px">교육감에게 지원 요청 / 반복·장시간은 학생생활교육위원회 심의</div></div>
+  </div>
+  <div class="block blue a d8" style="margin-top:10px;padding:14px 22px;display:flex;gap:26px;align-items:center">
+    <span class="sv" style="font-size:25px;font-weight:700;letter-spacing:-.02em">돌아올 수 있다고 판단되면 즉시 수업에 복귀시켜야 합니다</span>
+    <span class="t16" style="margin-left:auto;white-space:nowrap">제92조②</span></div>
+  <div class="note f d8">벌이 아닙니다 — <b>행동 개선 · 학습 회복 · 관계 회복을 지원하기 위한 교육적 조치</b>입니다 (제89조③).
+    학습이 끊기지 않도록 교과서 요약 · 학습과제 · 상담 · 성찰활동을 제공합니다 (제92조④).</div></div>
+  <div class="foot f d6"><span>교직원 연수 · 학생생활규정 전부개정</span><span>09 / 11</span></div></div></div>
+<div class="slidewrap" data-i="9" data-deck="staff" data-title="우리 학교는 이렇게 운영합니다"><div class="slide"><div class="topbar"><span class="tick f" style="background:var(--red);width:91%"></span></div>
+  <p class="kicker a d1">개별학생교육지원 &nbsp;·&nbsp; 내부 기안 결재 사항</p>
+  <h1 class="h1 a d2">우리 학교는 이렇게 운영합니다</h1>
+  <div class="rule aline d3"></div>
+  
+  <div class="body"><div class="a d4" style="margin-top:-8px"><span class="badge">규정 아님 &nbsp;·&nbsp; 변경 가능</span></div>
+  <div class="rows" style="margin-top:14px">
+    <div class="row a d4" style="padding:14px 0;align-items:baseline">
+      <span class="lab" style="min-width:96px">장소</span><span class="t18" style="color:var(--ink)">1학년 자기주도 학습실 2 (3층) &nbsp;/&nbsp; 2학년 자기주도 학습실 1 (2층) &nbsp;/&nbsp; 3학년 3학년 상담실 (4층)</span></div><div class="row a d5" style="padding:14px 0;align-items:baseline">
+      <span class="lab" style="min-width:96px">지도교사</span><span class="t18" style="color:var(--ink)">교직원 명렬표 순번대로. 순번 교사가 수업 중이면 다음 순번</span></div><div class="row a d6" style="padding:14px 0;align-items:baseline">
+      <span class="lab" style="min-width:96px">상담</span><span class="t18" style="color:var(--ink)">상담교사가 실시. 방해 행위가 지속되면 교감 또는 학생안전생활부장</span></div><div class="row a d7" style="padding:14px 0;align-items:baseline">
+      <span class="lab" style="min-width:96px">기록</span><span class="t18" style="color:var(--ink)">개별학생교육지원 관리대장 — 일자 · 학번 · 이름 · 교시 · 분리시간 · 분리공간 · 사유 · 지도담당자 · 확인자</span></div><div class="row a d8" style="padding:14px 0;align-items:baseline">
+      <span class="lab" style="min-width:96px">수당</span><span class="t18" style="color:var(--ink)">시간당 15,000원 &nbsp;·&nbsp; 연간 교당 240,000원</span></div>
+  </div>
+  <div class="note f d8">제92조⑤가 장소·시간·학습지원 방법을 <b>"학교장이 정하는 별도 운영계획"</b>으로 위임하고 있습니다.
+    학교 사정에 따라 바뀔 수 있어 일부러 규정에 넣지 않고 기안으로 뺐습니다. <b>바뀌면 다시 안내드립니다.</b></div></div>
+  <div class="foot f d6"><span>교직원 연수 · 학생생활규정 전부개정</span><span>10 / 11</span></div></div></div>
+<div class="slidewrap" data-i="10" data-deck="staff" data-title="우리 학교가 걷는 건 휴대폰만입니다"><div class="slide"><div class="topbar"><span class="tick f" style="background:var(--red);width:100%"></span></div>
+  <p class="kicker a d1">제31조 &nbsp;·&nbsp; 신설 &nbsp;·&nbsp; 초·중등교육법 제20조의5</p>
+  <h1 class="h1 a d2">우리 학교가 걷는 건 <em>휴대폰만</em>입니다</h1>
+  <div class="rule aline d3"></div>
+  <p class="lead a d4" style="width: 907px; height: 72px">제31조②는 학교의 장이 <b style="color:var(--ink);font-weight:600">제한 기준·방법과 스마트기기 유형</b>을 정하도록 위임합니다. 태블릿·노트북·스마트워치·이어폰은 현재 수거 대상이 아닙니다.</p>
+  <div class="body"><div class="cols" style="gap:38px;margin-top:4px">
+    <div class="col a d5">
+      <div class="lab blue">사용을 허용할 수 있는 세 가지</div>
+      <div class="bul"><span class="num" style="font-size:19px;min-width:20px;color:var(--blue)">1</span><span class="t18" style="width: 522px; height: 58px">장애가 있거나 특수교육이 필요한 학생 등이 보조기기로 사용하는 경우</span></div><div class="bul"><span class="num" style="font-size:19px;min-width:20px;color:var(--blue)">2</span><span class="t18">교사가 수업 등 교육활동의 목적상 필요하다고 인정하는 경우</span></div><div class="bul"><span class="num" style="font-size:19px;min-width:20px;color:var(--blue)">3</span><span class="t18">긴급한 상황 대응을 위하여 필요한 경우</span></div>
+      <div class="t16" style="margin-top:6px">수거·보관 — 등교 후 담임교사가 수거하여 휴대폰 가방에 보관 (제31조④)</div>
+    </div>
+    <div class="vhair"></div>
+    <div class="col a d6">
+      <div class="lab red">적발 시 단계 지도</div>
+      <div style="display:flex;gap:16px;align-items:baseline;padding:11px 0;border-top:1px solid var(--hair)">
+        <span class="lab red" style="min-width:38px">1차</span><span class="t18" style="color:var(--ink)">구두 경고 + 수업지도 교사가 즉시 보관</span></div><div style="display:flex;gap:16px;align-items:baseline;padding:11px 0;border-top:1px solid var(--hair)">
+        <span class="lab red" style="min-width:38px">2차</span><span class="t18" style="color:var(--ink)">담임 통보</span></div><div style="display:flex;gap:16px;align-items:baseline;padding:11px 0;border-top:1px solid var(--hair)">
+        <span class="lab red" style="min-width:38px">3차</span><span class="t18" style="color:var(--ink)">보호자 통보 + 생활지도 (반복 시 학생생활교육위원회 회부)</span></div>
+      <div class="t16" style="margin-top:6px">다른 기기라도 수업을 방해하면 제86조(물품 분리보관)로 처리할 수 있습니다.</div>
+    </div>
+  </div>
+  <div class="band a d8">무단 촬영 · 유포 등 중대한 사안은 해당 법률에 따라 처벌하며, 학교폭력 사안으로 처리할 수 있습니다.</div></div>
+  <div class="foot f d6"><span>교직원 연수 · 학생생활규정 전부개정</span><span>11 / 11</span></div></div></div>
+<div class="slidewrap" data-i="11" data-deck="student" data-title="학교 규정이 바뀝니다"><div class="slide cover"><div class="topbar"><span class="tick f" style="background:var(--blue);width:13%"></span></div>
+  <p class="kicker a d1" style="margin-bottom:26px">대진고등학교 &nbsp;·&nbsp; 학생 교육</p>
+  <h1 class="big a d2">학교 규정이<br><em>바뀝니다</em></h1>
+  <div class="rule aline d4" style="margin:34px 0 0;width:520px"></div>
+  <p class="a d5" style="font-size:27px;font-weight:500;margin:26px 0 0">2026년 <b style="color:var(--red)">9월 1일</b>부터</p>
+  <div class="block wash a d6" style="margin-top:34px;max-width:760px;padding:20px 24px">
+    <div class="t20" style="color:var(--ink)">여러분이 참여해서 바뀐 규정입니다.</div>
+    <div class="t16" style="margin-top:7px">6월 설문 응답 87명 중 <b style="color:var(--blue)">학생이 58명</b> · 전체의 3분의 2 &nbsp;·&nbsp; 동의 100% · 반대 0명</div>
+  </div><div class="foot f d6"><span>학생 교육 · 학생생활규정 개정</span><span>01 / 08</span></div></div></div>
+<div class="slidewrap" data-i="12" data-deck="student" data-title="11개였던 규정이 한 권이 됐습니다"><div class="slide"><div class="topbar"><span class="tick f" style="background:var(--ink);width:25%"></span></div>
+  <p class="kicker a d1">무엇이 바뀌었나</p>
+  <h1 class="h1 a d2">11개였던 규정이 <b>한 권</b>이 됐습니다</h1>
+  <div class="rule aline d3"></div>
+  <p class="lead a d4">어디에 뭐가 있는지 찾기 어려웠던 규정을 하나로 합쳤습니다.</p>
+  <div class="body"><div class="cols" style="gap:38px;margin-top:6px">
+    <div class="col a d5">
+      <div class="lab">그대로인 것</div>
+      <div style="display:flex;gap:14px;align-items:flex-start;padding:13px 0;border-top:1px solid var(--hair)">
+        <svg width="19" height="19" viewBox="0 0 20 20" fill="none" stroke="var(--muted)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:5px"><path d="M3.6 10.6l4 4 8.8-9.2"/></svg><span class="t22" style="color:var(--ink2)">복장 · 용의</span></div><div style="display:flex;gap:14px;align-items:flex-start;padding:13px 0;border-top:1px solid var(--hair)">
+        <svg width="19" height="19" viewBox="0 0 20 20" fill="none" stroke="var(--muted)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:5px"><path d="M3.6 10.6l4 4 8.8-9.2"/></svg><span class="t22" style="color:var(--ink2)">상점 · 벌점 제도</span></div><div style="display:flex;gap:14px;align-items:flex-start;padding:13px 0;border-top:1px solid var(--hair)">
+        <svg width="19" height="19" viewBox="0 0 20 20" fill="none" stroke="var(--muted)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:5px"><path d="M3.6 10.6l4 4 8.8-9.2"/></svg><span class="t22" style="color:var(--ink2)">징계 기준</span></div>
+      <div class="t16" style="margin-top:4px">이 부분은 걱정하지 않아도 됩니다. 달라진 게 없습니다.</div>
+    </div>
+    <div class="vhair"></div>
+    <div class="col a d6">
+      <div class="lab blue">새로 생긴 것</div>
+      <div class="block blue" style="padding:24px">
+        <div class="sv" style="font-size:31px;font-weight:700;letter-spacing:-.02em;line-height:1.35">선생님이 여러분을<br>어떻게 지도하는가</div>
+        <div class="t16" style="margin-top:12px;color:rgba(250,247,242,.8)">제3편 · 제74~95조</div>
+      </div>
+      <div class="t18">오늘 이야기할 건 여기서 세 가지입니다.</div>
+    </div>
+  </div>
+  <div class="note f d8" style="font-size:19px;color:var(--ink)">휴대폰 &nbsp;·&nbsp; 수업 중 분리 &nbsp;·&nbsp; 물건 보관</div></div>
+  <div class="foot f d6"><span>학생 교육 · 학생생활규정 개정</span><span>02 / 08</span></div></div></div>
+<div class="slidewrap" data-i="13" data-deck="student" data-title="우리 학교가 걷는 건 휴대폰만입니다"><div class="slide"><div class="topbar"><span class="tick f" style="background:var(--red);width:38%"></span></div>
+  <p class="kicker a d1">제31조</p>
+  <h1 class="h1 a d2">우리 학교가 걷는 건 <em>휴대폰만</em>입니다</h1>
+  <div class="rule aline d3"></div>
+  
+  <div class="body"><div class="a d4" style="margin-top:2px">
+    <div class="t22" style="font-size:25px">등교하면 담임 선생님이 걷어서 <b>휴대폰 가방</b>에 보관합니다.</div>
+    <div class="t18" style="margin-top:10px">태블릿 · 노트북 · 스마트워치 · 이어폰은 <b style="color:var(--ink)">걷지 않습니다.</b>
+      다만 수업을 방해하면 그 물건도 맡아 둘 수 있습니다 (제86조).</div>
+  </div>
+  <div class="block wash a d6" style="margin-top:26px;padding:26px 28px">
+    <div class="lab blue">이럴 땐 써도 됩니다</div>
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;margin-top:16px">
+      <div><span class="num" style="font-size:26px;color:var(--blue)">1</span>
+        <div class="t18" style="margin-top:8px">장애가 있거나 특수교육이 필요해서 <b style="color:var(--ink)">보조기기로 써야 할 때</b></div></div><div><span class="num" style="font-size:26px;color:var(--blue)">2</span>
+        <div class="t18" style="margin-top:8px">선생님이 수업에 필요하다고 <b style="color:var(--ink)">허용했을 때</b></div></div><div><span class="num" style="font-size:26px;color:var(--blue)">3</span>
+        <div class="t18" style="margin-top:8px"><b style="color:var(--ink)">긴급한 상황</b>에 대응해야 할 때</div></div>
+    </div>
+  </div>
+  <div class="note f d8">규정에는 '스마트기기'라고 되어 있지만, <b>어떤 기기를 제한할지는 학교가 정하도록</b> 되어 있습니다 (제31조②).</div></div>
+  <div class="foot f d6"><span>학생 교육 · 학생생활규정 개정</span><span>03 / 08</span></div></div></div>
+<div class="slidewrap" data-i="14" data-deck="student" data-title="세 단계로 지도합니다"><div class="slide"><div class="topbar"><span class="tick f" style="background:var(--red);width:50%"></span></div>
+  <p class="kicker a d1">어겼을 때</p>
+  <h1 class="h1 a d2">세 단계로 지도합니다</h1>
+  <div class="rule aline d3"></div>
+  
+  <div class="body"><div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;margin-top:14px">
+    <div class="a d4" style="border-top:2px solid var(--red);padding-top:18px">
+      <div class="lab red">1차</div>
+      <div class="sv" style="font-size:32px;font-weight:700;letter-spacing:-.02em;margin-top:10px">구두 경고</div>
+      <div class="t18" style="margin-top:10px">수업 선생님이 그 자리에서 보관합니다</div></div><div class="a d5" style="border-top:2px solid var(--red);padding-top:18px">
+      <div class="lab red">2차</div>
+      <div class="sv" style="font-size:32px;font-weight:700;letter-spacing:-.02em;margin-top:10px">담임 통보</div>
+      <div class="t18" style="margin-top:10px">담임 선생님께 알립니다</div></div><div class="a d6" style="border-top:2px solid var(--red);padding-top:18px">
+      <div class="lab red">3차</div>
+      <div class="sv" style="font-size:32px;font-weight:700;letter-spacing:-.02em;margin-top:10px">보호자 통보</div>
+      <div class="t18" style="margin-top:10px">보호자에게 알리고 생활지도를 합니다</div></div>
+  </div>
+  <div class="t16 a d7" style="margin-top:22px">반복되면 학생생활교육위원회에 회부될 수 있습니다.</div>
+  <div class="band a d8" style="font-size:24px;padding:24px;line-height:1.5">
+    무단 촬영 · 유포는 학교 규정 문제가 아니라<br><b style="font-weight:700">법으로 처벌받는 사안</b>입니다.</div></div>
+  <div class="foot f d6"><span>학생 교육 · 학생생활규정 개정</span><span>04 / 08</span></div></div></div>
+<div class="slidewrap" data-i="15" data-deck="student" data-title="이건 벌이 아닙니다"><div class="slide"><div class="topbar"><span class="tick f" style="background:var(--blue);width:63%"></span></div>
+  <p class="kicker a d1">개별학생교육지원 &nbsp;·&nbsp; 전에는 '분리지도'라고 불렀습니다</p>
+  <h1 class="h1 a d2">이건 <b>벌이 아닙니다</b></h1>
+  <div class="rule aline d3"></div>
+  
+  <div class="body"><div style="flex:1;display:flex;flex-direction:column;justify-content:center">
+    <div class="a d5" style="display:flex;gap:26px;align-items:flex-start;max-width:1000px">
+      <span class="sv" style="font-size:80px;line-height:.8;color:var(--rule);font-weight:700">&ldquo;</span>
+      <div>
+        <p class="sv" style="font-size:37px;font-weight:600;line-height:1.55;letter-spacing:-.025em;margin:0;color:var(--ink)">
+          배제하거나 처벌하기 위한 수단이 아니라<br>
+          <b style="color:var(--blue);font-weight:700">행동 개선 · 학습 회복 · 관계 회복</b>을<br>
+          지원하기 위한 교육적 조치</p>
+        <p class="t16 a d7" style="margin-top:20px">학생생활규정 제89조③</p>
+      </div>
+    </div>
+  </div>
+  <div class="note f d8">수업 중 교실 밖으로 나가게 되는 경우가 있습니다. 왜 그렇게 하는지, 거기서 무엇을 하는지 다음 장에서 설명합니다.</div></div>
+  <div class="foot f d6"><span>학생 교육 · 학생생활규정 개정</span><span>05 / 08</span></div></div></div>
+<div class="slidewrap" data-i="16" data-deck="student" data-title="언제, 어디로, 무엇을, 얼마나"><div class="slide"><div class="topbar"><span class="tick f" style="background:var(--blue);width:75%"></span></div>
+  <p class="kicker a d1">제89~92조</p>
+  <h1 class="h1 a d2">언제, 어디로, 무엇을, 얼마나</h1>
+  <div class="rule aline d3"></div>
+  
+  <div class="body"><div class="grid4" style="gap:0 30px;margin-top:6px">
+    <div class="cell a d4"><div class="lab blue">언제</div>
+      <div class="t18" style="margin-top:9px;color:var(--ink)">수업 중 <b>두 번 주의</b>를 받고도 계속 방해할 때</div>
+      <div class="t18" style="margin-top:6px;color:var(--ink)">고성 · 폭언으로 수업을 심각하게 방해할 때</div>
+      <div class="t16" style="margin-top:9px">선생님이 먼저 <b style="color:var(--ink2)">왜 그런지 설명하고, 스스로 협조해 달라고 요청</b>합니다. 갑자기 끌고 나가지 않습니다.</div></div>
+    <div class="cell a d5"><div class="lab blue">어디로</div>
+      <div class="t18" style="margin-top:9px;color:var(--ink)">1학년 &nbsp;자기주도 학습실 2 (3층)</div>
+      <div class="t18" style="color:var(--ink)">2학년 &nbsp;자기주도 학습실 1 (2층)</div>
+      <div class="t18" style="color:var(--ink)">3학년 &nbsp;3학년 상담실 (4층)</div>
+      <div class="t16" style="margin-top:9px">이 장소는 규정이 아니라 <b style="color:var(--red)">학교가 정한 것이라 바뀔 수 있습니다.</b></div></div>
+    <div class="cell a d6"><div class="lab blue">무엇을</div>
+      <div class="t18" style="margin-top:9px;color:var(--ink)">상담 · 학습지원<br>교과서 요약 · 학습과제<br>성찰 활동</div>
+      <div class="t16" style="margin-top:9px">그냥 앉아 있는 게 아닙니다. 수업이 끊기지 않도록 학습을 지원합니다.</div></div>
+    <div class="cell a d7"><div class="lab blue">얼마나</div>
+      <div class="t18" style="margin-top:9px;color:var(--ink)">돌아와도 되겠다고 판단되면 <b>바로 교실로</b> 돌아옵니다.</div>
+      <div class="t16" style="margin-top:9px">시간을 채우는 제도가 아닙니다 (제92조②).</div></div>
+  </div>
+  <div class="note f d8">보호자에게 알립니다. 계속 거부하거나 반복되면 보호자가 데리러 오시고 가정학습을 하게 됩니다 —
+    이 경우는 <b>출석으로 인정</b>됩니다.</div></div>
+  <div class="foot f d6"><span>학생 교육 · 학생생활규정 개정</span><span>06 / 08</span></div></div></div>
+<div class="slidewrap" data-i="17" data-deck="student" data-title="물건을 맡길 땐, 이 네 가지를 반드시 알려 줍니다"><div class="slide"><div class="topbar"><span class="tick f" style="background:var(--ink);width:88%"></span></div>
+  <p class="kicker a d1">제86조</p>
+  <h1 class="h1 a d2">물건을 맡길 땐, 이 네 가지를 반드시 알려 줍니다</h1>
+  <div class="rule aline d3"></div>
+  <p class="lead a d4">선생님이 알려 주지 않고 그냥 가져갈 수 없습니다. 규정에 그렇게 되어 있습니다.</p>
+  <div class="body"><div class="grid4 a d5" style="gap:0 30px;margin-top:6px">
+    <div class="cell" style="border-top:2px solid var(--ink)">
+      <div class="sv" style="font-size:31px;font-weight:700;letter-spacing:-.025em;line-height:1.35">왜 맡기는지</div></div><div class="cell" style="border-top:2px solid var(--ink)">
+      <div class="sv" style="font-size:31px;font-weight:700;letter-spacing:-.025em;line-height:1.35">언제까지</div></div><div class="cell" style="border-top:2px solid var(--ink)">
+      <div class="sv" style="font-size:31px;font-weight:700;letter-spacing:-.025em;line-height:1.35">어디에 두는지</div></div><div class="cell" style="border-top:2px solid var(--ink)">
+      <div class="sv" style="font-size:31px;font-weight:700;letter-spacing:-.025em;line-height:1.35">어떻게 돌려받는지</div></div>
+  </div>
+  <div class="a d7" style="margin-top:24px">
+    <div class="lab">맡아 두는 물건</div>
+    <div class="t18" style="margin-top:10px;line-height:1.9">
+      ① 두 번 주의했는데 계속 쓰는 수업방해 물품 &nbsp;&nbsp; ② 안전 · 건강에 위험한 물품 &nbsp;&nbsp;
+      ③ 법으로 소지 · 사용이 금지된 물품 &nbsp;&nbsp; ④ 휴대폰 등 제한 대상 &nbsp;&nbsp; ⑤ 학칙상 금지물품</div>
+  </div>
+  <div class="note f d8">맡긴 사실은 <b>기록되고 보호자에게도 알립니다.</b></div></div>
+  <div class="foot f d6"><span>학생 교육 · 학생생활규정 개정</span><span>07 / 08</span></div></div></div>
+<div class="slidewrap" data-i="18" data-deck="student" data-title="여러분에게 보장되는 것들"><div class="slide"><div class="topbar"><span class="tick f" style="background:var(--blue);width:100%"></span></div>
+  <p class="kicker a d1">마지막</p>
+  <h1 class="h1 a d2">여러분에게 보장되는 것들</h1>
+  <div class="rule aline d3"></div>
+  
+  <div class="body"><div class="grid3" style="margin-top:8px;flex:1">
+    <div class="a d4">
+      <div class="lab red">선생님이 할 수 없는 것</div>
+      <div style="margin-top:12px;display:flex;flex-direction:column;gap:9px">
+        <div style="display:flex;gap:11px;align-items:flex-start"><svg width="19" height="19" viewBox="0 0 20 20" fill="none" stroke="var(--red)" stroke-width="1.9" stroke-linecap="round" style="flex:none;margin-top:5px"><path d="M5.2 5.2l9.6 9.6M14.8 5.2l-9.6 9.6"/></svg><span class="t20">체벌</span></div><div style="display:flex;gap:11px;align-items:flex-start"><svg width="19" height="19" viewBox="0 0 20 20" fill="none" stroke="var(--red)" stroke-width="1.9" stroke-linecap="round" style="flex:none;margin-top:5px"><path d="M5.2 5.2l9.6 9.6M14.8 5.2l-9.6 9.6"/></svg><span class="t20">모욕 · 조롱</span></div><div style="display:flex;gap:11px;align-items:flex-start"><svg width="19" height="19" viewBox="0 0 20 20" fill="none" stroke="var(--red)" stroke-width="1.9" stroke-linecap="round" style="flex:none;margin-top:5px"><path d="M5.2 5.2l9.6 9.6M14.8 5.2l-9.6 9.6"/></svg><span class="t20">공개적으로 망신 주기</span></div><div style="display:flex;gap:11px;align-items:flex-start"><svg width="19" height="19" viewBox="0 0 20 20" fill="none" stroke="var(--red)" stroke-width="1.9" stroke-linecap="round" style="flex:none;margin-top:5px"><path d="M5.2 5.2l9.6 9.6M14.8 5.2l-9.6 9.6"/></svg><span class="t20">도구 · 신체로 고통 주기</span></div>
+      </div>
+      <div class="t16" style="margin-top:14px">다만 <b style="color:var(--ink2)">정당한 생활지도는 존중하고 따라야 합니다</b> (제76조①).</div>
+    </div>
+    <div class="a d5">
+      <div class="lab">말이 바뀐 것</div>
+      <div style="margin-top:12px;display:flex;flex-direction:column;gap:11px">
+        <div><div class="t16" style="text-decoration:line-through;text-decoration-color:var(--rule)">학생선도위원회</div>
+        <div class="t20" style="margin-top:2px">학생생활교육위원회</div></div><div><div class="t16" style="text-decoration:line-through;text-decoration-color:var(--rule)">분리지도</div>
+        <div class="t20" style="margin-top:2px">개별학생교육지원</div></div><div><div class="t16" style="text-decoration:line-through;text-decoration-color:var(--rule)">소지품 검사</div>
+        <div class="t20" style="margin-top:2px">물품의 조사 및 분리보관</div></div><div><div class="t16" style="text-decoration:line-through;text-decoration-color:var(--rule)">학부모</div>
+        <div class="t20" style="margin-top:2px">보호자</div></div>
+      </div>
+    </div>
+    <div class="a d6">
+      <div class="lab blue">규정을 바꾸는 방법</div>
+      <div style="margin-top:12px;display:flex;flex-direction:column;gap:13px">
+        <div><div class="t18">학생회 대표가 의결서를 붙여 <b style="color:var(--ink)">개정을 발의</b>할 수 있습니다</div><div class="art" style="margin-top:4px;color:var(--blue)">제11조①4호</div></div><div><div class="t18">학교운영위원회 심의 전 <b style="color:var(--ink)">학생 대표가 참석</b>하도록 의견을 낼 수 있습니다</div><div class="art" style="margin-top:4px;color:var(--blue)">제13조③</div></div><div><div class="t18">학급생활규정은 <b style="color:var(--ink)">학생 의견을 들어</b> 정합니다</div><div class="art" style="margin-top:4px;color:var(--blue)">제88조</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="note f d8" style="font-size:19px;color:var(--ink)">불편한 게 있으면 <b>학급회의 · 대의원회</b>에서 이야기해 주세요. 그게 규정을 바꾸는 정식 통로입니다.</div></div>
+  <div class="foot f d6"><span>학생 교육 · 학생생활규정 개정</span><span>08 / 08</span></div></div></div>
+</div>
+
+<div id="bar">
+  <button id="d-staff" aria-pressed="true">교직원</button>
+  <button id="d-student" aria-pressed="false">학생</button>
+  <span class="sep"></span>
+  <button id="prev" title="←">◀</button>
+  <span id="count">1 / 11</span>
+  <button id="next" title="→">▶</button>
+  <span class="sep"></span>
+  <button id="overview" title="O">전체보기</button>
+  <button id="full" title="F">전체화면</button>
+</div>
+
+<div id="grid"></div>
+
+<script>
+(function () {
+  var wraps = [].slice.call(document.querySelectorAll('.slidewrap'));
+  var stage = document.getElementById('stage');
+  var bar = document.getElementById('bar');
+  var grid = document.getElementById('grid');
+  var countEl = document.getElementById('count');
+  var deck = 'staff';
+  var idx = 0;
+
+  var DECKS = { staff: '교직원 연수', student: '학생 교육' };
+  function list() { return wraps.filter(function (w) { return w.dataset.deck === deck; }); }
+
+  function show(i) {
+    var ls = list();
+    idx = Math.max(0, Math.min(i, ls.length - 1));
+    wraps.forEach(function (w) { w.classList.remove('is-active'); });
+    if (ls[idx]) ls[idx].classList.add('is-active');
+    countEl.textContent = (idx + 1) + ' / ' + ls.length;
+    try { location.replace('#' + deck + '-' + (idx + 1)); } catch (e) {}
+  }
+  function setDeck(d, i) {
+    deck = d;
+    document.getElementById('d-staff').setAttribute('aria-pressed', String(d === 'staff'));
+    document.getElementById('d-student').setAttribute('aria-pressed', String(d === 'student'));
+    show(i || 0);
+  }
+  function fit() {
+    var k = Math.min(innerWidth / 1280, innerHeight / 720) * 0.94;
+    stage.style.transform = 'scale(' + k + ')';
+  }
+
+  function buildGrid() {
+    if (grid.dataset.built) return;
+    var html = '';
+    Object.keys(DECKS).forEach(function (d) {
+      html += '<h2>' + DECKS[d] + '</h2><div class="gwrap">';
+      wraps.filter(function (w) { return w.dataset.deck === d; }).forEach(function (w, i) {
+        html += '<button class="gcell" data-deck="' + d + '" data-i="' + i + '">' +
+          '<div class="gthumb">' + w.innerHTML + '</div>' +
+          '<div class="gcap"><b>' + String(i + 1).padStart(2, '0') + '</b>' + w.dataset.title + '</div></button>';
+      });
+      html += '</div>';
+    });
+    grid.innerHTML = html;
+    grid.dataset.built = '1';
+    grid.addEventListener('click', function (e) {
+      var c = e.target.closest ? e.target.closest('.gcell') : null;
+      if (!c) return;
+      toggleGrid(false);
+      setDeck(c.dataset.deck, parseInt(c.dataset.i, 10));
+    });
+  }
+  function toggleGrid(on) {
+    if (on === undefined) on = !grid.classList.contains('on');
+    if (on) buildGrid();
+    grid.classList.toggle('on', on);
+  }
+
+  document.getElementById('prev').onclick = function () { show(idx - 1); };
+  document.getElementById('next').onclick = function () { show(idx + 1); };
+  document.getElementById('d-staff').onclick = function () { setDeck('staff'); };
+  document.getElementById('d-student').onclick = function () { setDeck('student'); };
+  document.getElementById('overview').onclick = function () { toggleGrid(); };
+  document.getElementById('full').onclick = function () {
+    if (document.fullscreenElement) document.exitFullscreen();
+    else document.documentElement.requestFullscreen();
+  };
+
+  addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') { show(idx + 1); e.preventDefault(); }
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { show(idx - 1); e.preventDefault(); }
+    else if (e.key === 'Home') show(0);
+    else if (e.key === 'End') show(list().length - 1);
+    else if (e.key === 'o' || e.key === 'O') toggleGrid();
+    else if (e.key === 'f' || e.key === 'F') document.getElementById('full').click();
+    else if (e.key === 'Escape' && grid.classList.contains('on')) toggleGrid(false);
+  });
+
+  stage.addEventListener('click', function (e) {
+    show(e.clientX < innerWidth / 2 ? idx - 1 : idx + 1);
+  });
+
+  var t;
+  function wake() {
+    bar.classList.remove('hide');
+    clearTimeout(t);
+    t = setTimeout(function () {
+      if (document.fullscreenElement) bar.classList.add('hide');
+    }, 2200);
+  }
+  addEventListener('mousemove', wake);
+  addEventListener('keydown', wake);
+  document.addEventListener('fullscreenchange', wake);
+
+  addEventListener('resize', fit);
+  fit();
+
+  var m = /^#(staff|student)-(\d+)$/.exec(location.hash || '');
+  if (m) setDeck(m[1], parseInt(m[2], 10) - 1);
+  else setDeck('staff', 0);
+  wake();
+})();
+</script>
+</body>
+</html>
