@@ -1,70 +1,6 @@
 {
   "artboards": [
     {
-      "file": "StudentCover.dc.html",
-      "x": 0,
-      "y": 0,
-      "w": 1280,
-      "h": 720,
-      "page": "student"
-    },
-    {
-      "file": "StudentStructure.dc.html",
-      "x": 1400,
-      "y": 0,
-      "w": 1280,
-      "h": 720,
-      "page": "student"
-    },
-    {
-      "file": "StudentPhone.dc.html",
-      "x": 2800,
-      "y": 0,
-      "w": 1280,
-      "h": 720,
-      "page": "student"
-    },
-    {
-      "file": "StudentPhoneSteps.dc.html",
-      "x": 4200,
-      "y": 0,
-      "w": 1280,
-      "h": 720,
-      "page": "student"
-    },
-    {
-      "file": "StudentNotPunishment.dc.html",
-      "x": 0,
-      "y": 900,
-      "w": 1280,
-      "h": 720,
-      "page": "student"
-    },
-    {
-      "file": "StudentSupport.dc.html",
-      "x": 1400,
-      "y": 900,
-      "w": 1280,
-      "h": 720,
-      "page": "student"
-    },
-    {
-      "file": "StudentItems.dc.html",
-      "x": 2800,
-      "y": 900,
-      "w": 1280,
-      "h": 720,
-      "page": "student"
-    },
-    {
-      "file": "StudentRights.dc.html",
-      "x": 4200,
-      "y": 900,
-      "w": 1280,
-      "h": 720,
-      "page": "student"
-    },
-    {
       "file": "Main.dc.html",
       "x": 0,
       "y": 0,
@@ -151,11 +87,59 @@
       "w": 1280,
       "h": 720,
       "page": "staff"
+    },
+    {
+      "file": "StudentCover.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 1280,
+      "h": 720,
+      "page": "student"
+    },
+    {
+      "file": "StudentStructure.dc.html",
+      "x": 1400,
+      "y": 0,
+      "w": 1280,
+      "h": 720,
+      "page": "student"
+    },
+    {
+      "file": "StudentPhone.dc.html",
+      "x": 2800,
+      "y": 0,
+      "w": 1280,
+      "h": 720,
+      "page": "student"
+    },
+    {
+      "file": "StudentPhoneSteps.dc.html",
+      "x": 4200,
+      "y": 0,
+      "w": 1280,
+      "h": 720,
+      "page": "student"
+    },
+    {
+      "file": "StudentNotPunishment.dc.html",
+      "x": 0,
+      "y": 900,
+      "w": 1280,
+      "h": 720,
+      "page": "student"
+    },
+    {
+      "file": "StudentSupport.dc.html",
+      "x": 1430,
+      "y": 907,
+      "w": 1280,
+      "h": 720,
+      "page": "student"
     }
   ],
   "launch": {
     "view": "canvas",
-    "page": "staff"
+    "page": "student"
   },
   "pages": [
     {

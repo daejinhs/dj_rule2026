@@ -58,7 +58,7 @@ const html = `<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>학생생활규정 개정 교육 — 대진고등학교</title>
-<meta name="description" content="2026. 9. 1. 시행 학생생활규정 전부개정 교육자료. 교직원 연수 11장, 학생 교육 8장.">
+<meta name="description" content="2026. 9. 1. 시행 학생생활규정 전부개정 교육자료. 교직원 연수 11장, 학생 교육 6장.">
 ${fontLink}
 <style>
 ${sharedStyle}
